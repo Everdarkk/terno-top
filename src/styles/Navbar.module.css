@@ -1,0 +1,52 @@
+.navbar {
+    display: flex;
+    background: linear-gradient(180deg, rgba(64, 129, 151, 40%) 0%, rgba(48, 72, 105, 40%) 50%, rgba(14, 6, 18, 40%) 100%);
+    place-self: center;
+    align-items: center;
+    padding: 0.625rem 1.25rem;
+    gap: 6.25rem;
+    border-bottom-left-radius: 0.5rem;
+    border-bottom-right-radius: 0.5rem;
+    border: 1px solid #22222290;
+    border-top: none
+}
+
+.logoWrap {
+    display: flex;
+    align-items: center;
+    gap: 0.313rem;
+}
+
+.title {
+    font-size: 3.125rem;
+    font-weight: bold;
+    color: white;
+    -webkit-text-stroke: 1.5px #222;
+}
+
+.text {
+    font-size: 1.25rem;
+    font-weight: regular;
+    color: white;
+}
+
+.navList {
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+    gap: 1.875rem;
+    height: fit-content;
+    font-size: 1.875rem;
+    font-weight: regular;
+}
+
+.link {
+    text-decoration: none;
+    text-wrap: nowrap;
+    color: white;
+    text-shadow:
+        -1px -1px 0 #222,
+        1px -1px 0 #222,
+        -1px  1px 0 #222,
+        1px  1px 0 #222;
+}
