@@ -1,6 +1,6 @@
 export default function HomePage() {
     return (
-        <div>
+        <div style={{height:'200dvh'}}>
             HOME PAGE
         </div>
     )
