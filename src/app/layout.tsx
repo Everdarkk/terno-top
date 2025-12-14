@@ -27,7 +27,7 @@ export default function RootLayout({
 }: {children: React.ReactNode, modal: React.ReactNode}) {
   return (
     <html lang="uk">
-      <body className={`${geologica.className} ${overpass.className}`}>
+      <body>
         <Navbar />
         {children}
         {modal}

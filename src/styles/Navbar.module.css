@@ -17,6 +17,7 @@
         rgba(48, 72, 105, 40%) 50%,
         rgba(14, 6, 18, 40%) 100%
     );
+    backdrop-filter: blur(0.2rem);
 
     border: 1px solid #22222290;
     border-top: none;

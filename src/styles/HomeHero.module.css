@@ -1,11 +1,17 @@
 .container {
     width: 100%;
     height: 100dvh;
+    display: flex;
 }
 
+/* VIDEO */
 .videoWrap {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
+    z-index: -100;
 }
 
 .video {
@@ -14,3 +20,102 @@
     object-fit: cover;
 }
 
+
+/* MAIN CONTENT */
+.content {
+    width: 90rem;
+    /* background-color: rgba(255, 68, 0, 0.342); */
+    margin-inline: auto;
+    display: flex;
+}
+
+/* HEADER */
+.headerWrap {
+    width: 46.875rem;
+    padding: 1.25rem;
+    z-index: 10;
+    /* background-color: rgba(238, 130, 238, 0.413); */
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+    gap: 3.125rem;
+}
+
+.text {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+.text h1 {
+    font-size: clamp(1.625rem, 4vw, 3.75rem);
+    font-weight: bold;
+    text-shadow:
+        -1px -1px 0 #E7E9E6,
+        1px -1px 0 #E7E9E6,
+        -1px 1px 0 #E7E9E6,
+        1px 1px 0 #E7E9E6;
+}
+.text h3 {
+    font-size: clamp(1rem, 2.5vw, 1.875rem);
+    font-weight: 100;
+    text-align: center;
+    text-shadow:
+        -1px -1px 0 #E7E9E6,
+        1px -1px 0 #E7E9E6,
+        -1px 1px 0 #E7E9E6,
+        1px 1px 0 #E7E9E6;
+}
+/* BUTTON */
+.btn {
+    width: fit-content;
+    border-radius: 0.3rem;
+    border: 1px solid #8FABD4;
+    background-color: transparent;
+    padding: 1.25rem;
+    align-self: center;
+    font-size: 1.625rem;
+}
+.btn:hover {
+    background-color: #8FABD4;
+    border-color: #22222290;
+    transition: background-color 0.3s ease-in-out, border-color 0.3s ease-in-out;
+}
+.btn:active {
+    background-color: #313647;
+    color: #E7E9E6;
+    transition: all 0.1s ease-in-out;
+}
+
+/* MOBILE BREAKPOINTS */
+
+@media (max-width: 850px) {
+    .content {
+        justify-content: center;
+    }
+
+    .headerWrap {
+        width: 30rem
+    }
+
+    .btn {
+        font-size: 1.25rem;
+        padding: 0.85rem;
+    }
+
+    .text h3 {
+        text-shadow:
+            none;
+        color: #E7E9E6;
+    }
+}
+
+@media (max-width: 500px) {
+    .headerWrap {
+        width: 100%;
+    }
+
+    .btn {
+        font-size: 1rem;
+        padding: 0.75rem;
+    }
+}
