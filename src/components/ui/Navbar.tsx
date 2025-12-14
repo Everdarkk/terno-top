@@ -49,18 +49,18 @@ export default function Navbar() {
       }`}
     >
       <div className={styles.logoBtnWrap}>
-          {/* LOGO */}
+        {/* LOGO */}
+        <Link href="/home" onClick={closeMenu} className={styles.logoLink}>
           <div className={styles.logoWrap}>
-            <Link href="/home" onClick={closeMenu}>
-              <Image
-                src="/images/utils/logo.png"
-                alt="Терно-Топ"
-                width={100}
-                height={100}
-                className={styles.image}
-                priority
-              />
-            </Link>
+          
+            <Image
+              src="/images/utils/logo.png"
+              alt="Терно-Топ"
+              width={100}
+              height={100}
+              className={styles.image}
+              priority
+            />
             <div className={styles.titleWrap}>
               <h3 className={`${tektur.className} ${styles.title}`}>
                 Терно-Топ
@@ -70,24 +70,19 @@ export default function Navbar() {
               </p>
             </div>
           </div>
-          {/* BURGER */}
-          <button
-            className={styles.burger}
-            onClick={() => setIsOpen(prev => !prev)}
-            aria-label="Меню"
-            aria-expanded={isOpen}
-          >
-            <Image
-              src={
-                isOpen
-                  ? "/images/utils/close.png"
-                  : "/images/utils/menu.png"
-              }
-              alt="Menu"
-              width={32}
-              height={32}
-            />
-          </button>
+        </Link>
+
+        {/* BURGER */}
+        <button
+          className={`${styles.burger} ${isOpen ? styles.open : ""}`}
+          onClick={() => setIsOpen(prev => !prev)}
+          aria-label="Меню"
+          aria-expanded={isOpen}
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
       </div>
 
       {/* MENU */}
