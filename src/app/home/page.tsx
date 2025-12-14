@@ -1,7 +1,9 @@
+import HomeHero from "@/components/HomeHero";
+
 export default function HomePage() {
     return (
-        <div style={{height:'200dvh'}}>
-            HOME PAGE
+        <div>
+            <HomeHero />
         </div>
     )
 }
