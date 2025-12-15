@@ -2,10 +2,10 @@
     background-color: var(--color-cold-gray);
     font-weight: 100;
     width: 100%;
-    min-height: 80dvh;
 }
 
 .content {
+    width: 100%;
     max-width: 90rem;
     padding-block: 3.125rem;
     /* background-color: rgba(255, 68, 0, 0.342); */
@@ -78,4 +78,36 @@
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(3, 1fr);
     gap: clamp(1rem, 2vw, 2.5rem)
+}
+
+/* MOBILE BREAKPOINTS */
+
+@media (max-width: 890px) {
+
+    .content {
+        width: 100%;
+        flex-direction: column;
+    }
+
+    .textWrap {
+        flex-direction: row;
+        gap: 0.5rem;
+    }
+    
+    .header {
+        width: 100%;
+    }
+}
+
+@media (max-width: 550px) {
+
+    .textWrap {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .perksWrap {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: auto;
+    }
 }
