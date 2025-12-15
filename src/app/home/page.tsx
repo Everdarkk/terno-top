@@ -1,5 +1,6 @@
 import HomeHero from "@/components/HomeHero"
 import HomeSummary from "@/components/HomeSummary"
+import HomeConsulting from "@/components/HomeConsulting"
 import styles from "../../styles/HomePage.module.css"
 
 export default function HomePage() {
@@ -7,6 +8,7 @@ export default function HomePage() {
         <div className={styles.container}>
             <HomeHero />
             <HomeSummary />
+            <HomeConsulting />
         </div>
     )
 }

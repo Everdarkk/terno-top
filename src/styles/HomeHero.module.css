@@ -51,6 +51,7 @@
 }
 .text h1 {
     font-size: clamp(1.625rem, 2.5vw, 3.75rem);
+    text-transform: uppercase;
     font-weight: bold;
     color: var(--color-black);
     text-shadow:
