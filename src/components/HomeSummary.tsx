@@ -1,5 +1,7 @@
 import styles from "../styles/HomeSummary.module.css"
 import {geologica, overpass} from "@/app/layout"
+import PerkCard from "./ui/PerkCard"
+import { perkList } from "@/lib/data/perkList"
 
 export default function HomeSummary() {
     return (
@@ -18,7 +20,7 @@ export default function HomeSummary() {
                     </div>
 
                     {/* STATS */}
-                    <div>
+                    <div className={styles.statsWrap}>
                         <div className={styles.statItem}>
                             <h5 className={overpass.className}>
                                 10+
@@ -49,6 +51,18 @@ export default function HomeSummary() {
                             </p>
                         </div>
                     </div>
+                </div>
+
+                {/* RIGHT SIDE */}
+                <div className={styles.perksWrap}>
+                    {perkList.map((perk) => (
+                        <PerkCard
+                            key={perk.title}
+                            title={perk.title}
+                            imgUrl={perk.imgUrl}
+                        />
+                    ))
+                    }
                 </div>
 
             </div>
