@@ -47,46 +47,71 @@
     gap: 1.25rem;
 }
 .text h1 {
-    font-size: clamp(1.625rem, 4vw, 3.75rem);
+    font-size: clamp(1.625rem, 2.5vw, 3.75rem);
     font-weight: bold;
+    color: var(--color-black);
     text-shadow:
-        -1px -1px 0 #E7E9E6,
-        1px -1px 0 #E7E9E6,
-        -1px 1px 0 #E7E9E6,
-        1px 1px 0 #E7E9E6;
+        -1px -1px 0 #e7e9e690,
+        1px -1px 0 #e7e9e690,
+        -1px 1px 0 #e7e9e690,
+        1px 1px 0 #e7e9e690;
 }
 .text h3 {
-    font-size: clamp(1rem, 2.5vw, 1.875rem);
+    font-size: clamp(1rem, 1.5vw, 1.875rem);
     font-weight: 100;
+    color: var(--color-black);
     text-align: center;
     text-shadow:
-        -1px -1px 0 #E7E9E6,
-        1px -1px 0 #E7E9E6,
-        -1px 1px 0 #E7E9E6,
-        1px 1px 0 #E7E9E6;
+        -1px -1px 0 #e7e9e690,
+        1px -1px 0 #e7e9e690,
+        -1px 1px 0 #e7e9e690,
+        1px 1px 0 #e7e9e690;
 }
 /* BUTTON */
 .btn {
     width: fit-content;
     border-radius: 0.3rem;
-    border: 1px solid #8FABD4;
+    border: 1px solid var(--color-ceil);
+    color: #222222;
+    text-shadow:
+        -1px -1px 0 #e7e9e690,
+        1px -1px 0 #e7e9e690,
+        -1px 1px 0 #e7e9e690,
+        1px 1px 0 #e7e9e690;
     background-color: transparent;
-    padding: 1.25rem;
+    padding: clamp(0.6rem, 1vw, 1.25rem);
     align-self: center;
-    font-size: 1.625rem;
+    font-size: clamp(1rem, 1.5vw, 1.625rem);
 }
 .btn:hover {
-    background-color: #8FABD4;
+    background: linear-gradient(
+        180deg,
+        rgba(64, 129, 151, 40%) 0%,
+        rgba(48, 72, 105, 40%) 50%,
+        rgba(14, 6, 18, 40%) 100%
+    );
+    backdrop-filter: blur(0.2rem);
     border-color: #22222290;
     transition: background-color 0.3s ease-in-out, border-color 0.3s ease-in-out;
 }
 .btn:active {
     background-color: #313647;
-    color: #E7E9E6;
+    color: var(--color-platinum);
+    text-shadow:
+        -1px -1px 0 #22222290,
+        1px -1px 0 #22222290,
+        -1px 1px 0 #22222290,
+        1px 1px 0 #22222290;
     transition: all 0.1s ease-in-out;
 }
 
 /* MOBILE BREAKPOINTS */
+@media (max-width: 1400px) {
+
+    .headerWrap {
+        width: 38rem;
+    }
+}
 
 @media (max-width: 850px) {
     .content {
@@ -105,7 +130,7 @@
     .text h3 {
         text-shadow:
             none;
-        color: #E7E9E6;
+        color: var(--color-platinum);
     }
 }
 

@@ -4,6 +4,17 @@
   padding: 0;
 }
 
+:root {
+  --color-black: #222222;
+  --color-old-black: #292827;
+  --color-platinum: #e7e9e6;
+  --color-ceil: #8fabd4;
+  --color-space: #313647;
+  --color-cold-gray: #d4dddf;
+  --color-foil: #b1a313;
+
+}
+
 html {
   scrollbar-gutter: stable;
   overflow-y: auto;

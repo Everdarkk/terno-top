@@ -1,0 +1,5 @@
+.container {
+    background-color: var(--color-cold-gray);
+    height: 67.5rem;
+    font-weight: 100;
+}
