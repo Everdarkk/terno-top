@@ -26,6 +26,7 @@
     display: flex;
     gap: 2.5rem;
     justify-content: center;
+    align-items: center;
 }
 
 /* LEFT SIDE */
@@ -35,7 +36,7 @@
     flex-direction: column;
     max-width: 37.5rem;
     padding-inline: 1.563rem;
-    gap: 3.125rem;
+    gap: var(--text-title);
 }
 
 /* HEADER */
@@ -59,7 +60,10 @@
 .textWrap {
     display: flex;
     flex-direction: column;
-    gap: 1.875rem;
+    gap: var(--text-title);
+}
+.textWrap p {
+    font-size: var(--text-p);
 }
 
 /* IMAGE */
@@ -115,4 +119,12 @@
         -1px 1px 0 #22222290,
         1px 1px 0 #22222290;
     transition: all 0.1s ease-in-out;
+}
+
+/* BREAKPOINTS */
+
+@media (max-width: 1080px) {
+    .infoWrap {
+        flex-direction: column;
+    }
 }
