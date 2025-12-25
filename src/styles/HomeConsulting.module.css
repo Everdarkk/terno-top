@@ -7,7 +7,7 @@
 .content {
     width: 100%;
     max-width: 90rem;
-    background-color: rgba(255, 68, 0, 0.342);
+    /* background-color: rgba(255, 68, 0, 0.342); */
     margin-inline: auto;
     display: flex;
     flex-direction: column;
