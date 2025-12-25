@@ -13,9 +13,21 @@
   --color-cold-gray: #d4dddf;
   --color-foil: #b1a313;
 
+  --text-title: clamp(1.625rem, 2.5vw, 3.125rem);
+  --text-header: clamp(1.25rem, 1.5vw, 1.875rem);
+  --text-p: clamp(0.875rem, 1vw, 1.25rem);
 }
 
 html {
   scrollbar-gutter: stable;
   overflow-y: auto;
+  
+}
+
+body {
+  font-weight: 100;
+}
+
+ul {
+  list-style-type: none;
 }

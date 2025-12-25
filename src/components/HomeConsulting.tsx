@@ -19,7 +19,7 @@ export default function HomeConsulting() {
                     <div className={styles.leftWrap}>
                         {/* HEADER */}
                         <div className={styles.header}>
-                            <h3>
+                            <h3 className={`${overpass.className}`}>
                                 Ваше здоров’я – наш пріоритет. Отримайте професійну консультацію від провідних спеціалістів у зручний для вас час.
                             </h3>
                             <p>

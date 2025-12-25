@@ -3,6 +3,82 @@
     min-height: 50dvh;
 }
 
+/* MAIN CONTENT */
+.content {
+    width: 100%;
+    max-width: 90rem;
+    background-color: rgba(255, 68, 0, 0.342);
+    margin-inline: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 3.125rem;
+    padding-block: 3.125rem;
+}
+
+/* TITLE */
+.title {
+    font-size: var(--text-title);
+    text-align: center;
+}
+
+/* MAIN INFO */
+.infoWrap {
+    display: flex;
+    gap: 2.5rem;
+    justify-content: center;
+}
+
+/* LEFT SIDE */
+.leftWrap {
+    /* background-color: lightblue; */
+    display: flex;
+    flex-direction: column;
+    max-width: 37.5rem;
+    padding-inline: 1.563rem;
+    gap: 3.125rem;
+}
+
+/* HEADER */
+.header {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+.header h3 {
+    text-align: center;
+    font-size: var(--text-header);
+    font-weight: bold;
+}
+
+.header p {
+    font-size: var(--text-p);
+}
+
+/* TEXT */
+.textWrap {
+    display: flex;
+    flex-direction: column;
+    gap: 1.875rem;
+}
+
+/* IMAGE */
+.image {
+    border-top-right-radius: 50%;
+    border-bottom-right-radius: 50%;
+    width: 100%;
+    height: 25rem;
+    object-fit: cover;
+}
+
+/* RIGHT SIDE */
+.rightWrap {
+    /* background-color: lightgoldenrodyellow; */
+    display: flex;
+    flex-direction: column;
+    gap: 5rem;
+}
+
 /* BUTTON */
 .btn {
     width: fit-content;

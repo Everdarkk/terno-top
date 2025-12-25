@@ -1,10 +1,10 @@
 import styles from "../../styles/ConsultCard.module.css"
 import Image from "next/image"
 
-export default function ConsultCard({title, text, imgSrc, side}: {title: string, text: string, imgSrc: string, side: string }) {
+export default function ConsultCard({title, text, imgSrc, side}: {title: string, text: string, imgSrc: string, side: 'left' | 'right' }) {
 
     return (
-        <article className={`${styles.container} ${side === 'left' ? null : styles.rightSide}`}>
+        <article className={`${styles.container} ${side === 'left' ? styles.leftSide : styles.rightSide}`}>
             <div className={styles.imageWrap}>
                 <Image
                     src={imgSrc}
@@ -15,7 +15,7 @@ export default function ConsultCard({title, text, imgSrc, side}: {title: string,
                 />
             </div>
 
-            <div className={`${styles.content} ${side === 'left' ? null : styles.rightContent}`}>
+            <div className={`${styles.content} ${side === 'left' ? styles.contentLeft : styles.contentRight}`}>
                 <h5>
                     {title}
                 </h5>
