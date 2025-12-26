@@ -1,0 +1,70 @@
+.container {
+    width: clamp(10rem, 35vw, 30rem);
+    max-height: 45rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: clamp(1.25rem, 2vw, 3.25rem);
+    padding-inline: 1.25rem;
+    
+    border: 0.1rem solid #e7e9e625;
+    border-radius: 0.3rem;
+
+    background-color: #22222290;
+}
+
+/* IMAGE */
+.image {
+    width: clamp(10rem, 35vw, 30rem);
+    height: clamp(10rem, 35vw, 30rem);
+    border-radius: 0.3rem;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+
+    user-select: none;
+    pointer-events: none;
+    -webkit-user-drag: none;
+}
+
+/* DETAILS */
+.textWrap {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    color: var(--color-platinum);
+}
+
+.textWrap h5 {
+    font-size: clamp(1rem, 2.5vw, 1.875rem);
+}
+
+.textWrap p {
+    font-size: clamp(0.8rem, 1.75vw, 1.25rem);
+}
+
+/* BUTTON */
+.btn {
+    width: fit-content;
+    border-radius: 0.3rem;
+    border: 1px solid var(--color-ceil);
+    color: var(--color-platinum);
+    
+    background-color: transparent;
+    padding: clamp(0.6rem, 1vw, 1.25rem);
+    align-self: center;
+    font-size: clamp(1rem, 1.5vw, 1.325rem);
+}
+.btn:hover {
+    background: var(--color-ceil);
+    color: var(--color-black);
+    backdrop-filter: blur(0.2rem);
+    border-color: #22222290;
+    transition: background-color 0.3s ease-in-out, border-color 0.3s ease-in-out;
+}
+.btn:active {
+    background-color: #313647;
+    color: var(--color-platinum);
+    transition: all 0.1s ease-in-out;
+}

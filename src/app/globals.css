@@ -21,13 +21,15 @@
 html {
   scrollbar-gutter: stable;
   overflow-y: auto;
+  overflow-x: hidden;
   
 }
 
 body {
   font-weight: 100;
+  overflow-x: hidden;
 }
 
-ul {
+ul, li {
   list-style-type: none;
 }

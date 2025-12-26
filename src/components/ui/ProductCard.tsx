@@ -1,3 +1,4 @@
+import { overpass, geologica } from '@/app/layout'
 import Image from "next/image"
 import styles from '../../styles/ProductCard.module.css'
 import { Product } from '../../lib/types/index'
@@ -18,14 +19,14 @@ export default function ProductCard({product} : Props) {
                     <Image
                         src={imgSrc}
                         alt={title}
-                        width={400}
-                        height={330}
+                        width={500}
+                        height={500}
                         className={styles.image}
                     />
                 </div>
                 {/* DETAILS */}
                 <div className={styles.textWrap}>
-                    <h5>
+                    <h5 className={overpass.className}>
                         {title}
                     </h5>
                     <p>
@@ -36,7 +37,7 @@ export default function ProductCard({product} : Props) {
                     </p>
                 </div>
                 {/* DETAILS BUTTON */}
-                <button className={styles.btn}>
+                <button className={`${styles.btn} ${geologica.className}`}>
                     Детальніше
                 </button>
             </article>

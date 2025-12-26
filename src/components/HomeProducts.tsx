@@ -10,7 +10,7 @@ export default function HomeProducts() {
         <section className={styles.container}>
             <div className={styles.content}>
                 {/* TITLE */}
-                <div className={styles.title}>
+                <div className={`${styles.title} ${overpass.className}`}>
                     <h3>
                         Популярні товари з нашого каталогу
                     </h3>

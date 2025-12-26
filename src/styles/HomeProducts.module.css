@@ -41,7 +41,7 @@
 .link {
     text-decoration: none;
     font-weight: bold;
-    font-size: 1.875rem;
+    font-size: var(--text-header);
     text-align: center;
     color: var(--color-ceil);
     transition: color 0.5s ease;
