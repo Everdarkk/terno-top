@@ -1,0 +1,27 @@
+.container {
+    width: clamp(10rem, 35vw, 30rem);
+    max-height: 45rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: clamp(1.25rem, 2vw, 3.25rem);
+    padding-inline: 1.25rem;
+    
+    border: 0.1rem solid #e7e9e625;
+    border-radius: 0.3rem;
+
+    background-color: #22222290;
+}
+
+/* IMAGE */
+.image {
+    width: 1.725rem;
+    height: 1.725rem;
+    border-radius: 50%;
+
+    user-select: none;
+    pointer-events: none;
+    -webkit-user-drag: none;
+}
