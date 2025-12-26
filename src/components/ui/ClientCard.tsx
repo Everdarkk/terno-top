@@ -1,47 +1,46 @@
 import Image from "next/image"
-import styles from '../../styles/ClientCard.module.css'
-import { overpass, geologica } from "@/app/layout"
+import styles from "../../styles/ClientCard.module.css"
+import { overpass } from "@/app/layout"
 import { Review } from "@/lib/types"
+import RatingStars from "./RatingStars"
 
 type Props = {
-    client: Review
+  client: Review
 }
 
-export default function ClientCard({client}: Props) {
-    const {id, name, sex, rating, text} = client
+export default function ClientCard({ client }: Props) {
+  const { name, sex, rating, text } = client
 
-    const male = 'https://xsgames.co/randomusers/avatar.php?g=male'
-    const female = 'https://xsgames.co/randomusers/avatar.php?g=female'
-    const linkSrc = (sex === 'male' ? male : female)
+  const avatar =
+    sex === "male"
+      ? "https://xsgames.co/randomusers/avatar.php?g=male"
+      : "https://xsgames.co/randomusers/avatar.php?g=female"
 
-    return (
-        <li>
-            <article className={styles.container}>
-                {/* IMAGE AND NAME */}
-                <div className={styles.imageWrap}>
-                    <Image
-                        src={linkSrc}
-                        alt={name}
-                        width={50}
-                        height={50}
-                    />
+  return (
+    <li className={styles.listItem}>
+      <article className={styles.card}>
+        {/* HEADER */}
+        <header className={styles.header}>
+          <div className={styles.user}>
+            <Image
+              src={avatar}
+              alt={name}
+              width={48}
+              height={48}
+              className={styles.avatar}
+              draggable={false}
+            />
+            <span className={`${styles.name} ${overpass.className}`}>
+              {name}
+            </span>
+          </div>
 
-                    <h6>
-                        {name}
-                    </h6>
-                </div>
+          <RatingStars rating={rating} size={18} />
+        </header>
 
-                <div className={styles.starsWrap}>
-                    RATING
-                </div>
-
-                <div className={styles.textWrap}>
-                    <p>
-                        {text}
-                    </p>
-                </div>
-
-            </article>
-        </li>
-    )
+        {/* TEXT */}
+        <p className={styles.text}>{text}</p>
+      </article>
+    </li>
+  )
 }
