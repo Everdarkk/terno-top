@@ -11,8 +11,8 @@
     margin-inline: auto;
     display: flex;
     flex-direction: column;
-    gap: 3.125rem;
-    padding-block: 3.125rem;
+    gap: var(--text-header);
+    padding-block: var(--text-header);
 }
 
 /* TITLE */
