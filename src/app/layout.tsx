@@ -1,4 +1,5 @@
 import Navbar from "@/components/ui/Navbar"
+import Footer from "@/components/Footer"
 import "./globals.css"
 import { Geologica, Overpass, Tektur, Unbounded} from "next/font/google"
 
@@ -31,7 +32,9 @@ export default function RootLayout({
         <Navbar />
         {children}
         {modal}
+        <Footer />
       </body>
+      
     </html>
   )
 }

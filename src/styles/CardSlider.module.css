@@ -8,15 +8,15 @@
   mask-image: linear-gradient(
     to right,
     transparent 0%,
-    black 10%,
-    black 90%,
+    #222222 5%,
+    #222222 95%,
     transparent 100%
   );
   -webkit-mask-image: linear-gradient(
     to right,
     transparent 0%,
-    black 10%,
-    black 90%,
+    #222222 5%,
+    #222222 95%,
     transparent 100%
   );
 }
@@ -77,18 +77,18 @@
 
   .container {
     mask-image: linear-gradient(
-      to right,
-      transparent 0%,
-      black 15%,
-      black 85%,
-      transparent 100%
-    );
-    -webkit-mask-image: linear-gradient(
-      to right,
-      transparent 0%,
-      black 15%,
-      black 85%,
-      transparent 100%
-    );
+    to right,
+    transparent 0%,
+    #222222 5%,
+    #222222 95%,
+    transparent 100%
+  );
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    #222222 5%,
+    #222222 95%,
+    transparent 100%
+  );
   }
 }

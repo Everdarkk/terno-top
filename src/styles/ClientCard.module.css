@@ -75,7 +75,7 @@
 .name {
   font-size: 0.95rem;
   font-weight: 500;
-  color: #f1f1f1;
+  color: var(--color-black);
   letter-spacing: 0.02em;
 }
 
@@ -83,8 +83,7 @@
 .text {
   font-size: 0.9rem;
   line-height: 1.6;
-  color: rgba(255, 255, 255, 0.78);
-
+  color: var(--color-black);
   display: -webkit-box;
   line-clamp: 5;
   -webkit-line-clamp: 5;
