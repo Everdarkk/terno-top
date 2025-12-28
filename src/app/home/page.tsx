@@ -3,6 +3,7 @@ import HomeSummary from "@/components/HomeSummary"
 import HomeConsulting from "@/components/HomeConsulting"
 import HomeProducts from "@/components/HomeProducts"
 import HomeClients from "@/components/HomeClients"
+import HomeLocation from "@/components/HomeLocation"
 import styles from "../../styles/HomePage.module.css"
 
 export default function HomePage() {
@@ -13,6 +14,7 @@ export default function HomePage() {
             <HomeProducts />
             <HomeConsulting />
             <HomeClients />
+            <HomeLocation />
         </div>
     )
 }

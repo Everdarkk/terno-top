@@ -1,0 +1,17 @@
+.container {
+    background-color: var(--color-space);
+    width: 100%;
+    min-height: 50dvh;
+}
+
+/* MAIN CONTENT */
+.content {
+    width: 100%;
+    max-width: 90rem;
+    /* background-color: rgba(255, 68, 0, 0.342); */
+    margin-inline: auto;
+    display: flex;
+    flex-direction: column;
+    gap: var(--text-header);
+    padding-block: var(--text-header);
+}
