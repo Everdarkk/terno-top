@@ -2,4 +2,7 @@
     position: relative;
     width: clamp(20rem, 50vw, 31.25rem);
     height: clamp(20rem, 50vw, 31.25rem);
+    border-radius: 0.6rem;
+    background-color: #222222;
+    padding: 20px;
 }
