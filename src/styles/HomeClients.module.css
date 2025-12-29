@@ -54,3 +54,15 @@
     color: var(--color-platinum);
     transition: color 0.2s ease;
 }
+
+/* BREAKPOINTS */
+
+@media (max-width: 620px) {
+    .title {
+        flex-direction: column;
+    }
+    .title h3 {
+        white-space: wrap;
+        text-align: center;
+    }
+}
