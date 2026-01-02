@@ -1,22 +1,12 @@
 import styles from "../styles/HomeHero.module.css"
 import { overpass, geologica } from "@/app/layout"
+import VideoBg from "./ui/VideoBg"
 
 export default function HomeHero() {
     return (
         <section className={styles.container}>
             {/* VIDEO */}
-            <div className={styles.videoWrap}>
-                <video
-                    autoPlay
-                    muted
-                    loop
-                    playsInline
-                    preload="metadata"
-                    className={styles.video}
-                > 
-                <source src="/videos/video-1.webm" type="video/webm" />
-                </video>
-            </div>
+            <VideoBg src="/videos/video-1.webm"/>
             {/* CONTENT */}
             <div className={styles.content}>
                 {/* HEADER */}

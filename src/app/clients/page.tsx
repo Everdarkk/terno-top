@@ -1,7 +1,9 @@
+import ClientsHero from "@/components/ClientsHero"
+
 export default function ClientsPage() {
     return (
         <div>
-            CLIENTS PAGE
+            <ClientsHero />
         </div>
     )
 }

@@ -27,8 +27,8 @@ export default function HomeLocation() {
                                 <Image
                                     src={'/images/utils/location.png'}
                                     alt='Location'
-                                    width={30}
-                                    height={30}
+                                    width={100}
+                                    height={100}
                                     className={styles.icon}
                                 />
                                 <h5 className={styles.header}>
@@ -54,8 +54,8 @@ export default function HomeLocation() {
                                 <Image
                                     src={'/images/utils/calendar.png'}
                                     alt='Location'
-                                    width={30}
-                                    height={30}
+                                    width={100}
+                                    height={100}
                                     className={styles.icon}
                                 />
                                 <h5 className={styles.header}>
@@ -94,8 +94,8 @@ export default function HomeLocation() {
                                 <Image
                                     src={'/images/utils/mobile.png'}
                                     alt='Phone'
-                                    width={30}
-                                    height={30}
+                                    width={100}
+                                    height={100}
                                     className={styles.icon}
                                 />
                                 <h5 className={styles.header}>
