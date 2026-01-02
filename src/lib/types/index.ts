@@ -19,3 +19,13 @@ export type Step = {
   text: string,
   imgUrl: string
 }
+
+export type Advice = {
+  title: string,
+  advices: [
+    first: string,
+    second: string,
+    third: string
+  ],
+  imgUrl: string
+}
