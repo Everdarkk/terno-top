@@ -40,7 +40,7 @@ export default function HomeConsulting() {
 
                         {/* IMAGE */}
                         <Image
-                            src={'/images/pics/consulting.jpg'}
+                            src={'/images/pics/consulting.webp'}
                             alt='Консультація лікаря'
                             width={550}
                             height={400}

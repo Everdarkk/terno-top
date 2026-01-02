@@ -13,3 +13,9 @@ export type Review = {
   rating: 1|2|3|4|5,
   text: string
 }
+
+export type Step = {
+  title: string,
+  text: string,
+  imgUrl: string
+}
