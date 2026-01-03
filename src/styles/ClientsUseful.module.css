@@ -63,9 +63,9 @@
 
 /* TEXT WRAP */
 .textWrap {
-    width: 80%;
+    max-width: 90rem;
     padding: clamp(2rem, 4vw, 3.5rem);
-    
+    margin-inline: var(--text-title);
     /* GLASSMORPHISM */
     background: #22222250;
     backdrop-filter: blur(0.125rem);

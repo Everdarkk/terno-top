@@ -104,4 +104,7 @@
         width: 100%;
         height: auto;
     }
+    .rightWrap {
+        gap: 1.25rem;
+    }
 }
