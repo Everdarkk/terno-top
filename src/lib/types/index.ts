@@ -29,3 +29,8 @@ export type Advice = {
   ],
   imgUrl: string
 }
+
+export type Question = {
+  question: string,
+  answer: string
+}

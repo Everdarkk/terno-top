@@ -39,6 +39,16 @@
     background-color: var(--color-black);
 }
 
+/* FAQ LIST */
+.questionsWrap {
+    display: flex;
+    flex-direction: column;
+    gap: var(--text-header);
+    padding: var(--text-header);
+}
+
+/* BREAKPOINTS */
+
 @media (max-width: 620px) {
     .title {
         flex-direction: column;

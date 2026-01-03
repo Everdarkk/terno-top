@@ -1,0 +1,115 @@
+/* CARD */
+.item {
+    position: relative;
+    width: 100%;
+    cursor: pointer;
+    overflow: hidden;
+    
+    /* GLASSMORPHISM */
+    background: #22222240;
+    backdrop-filter: blur(0.125rem);
+    border: 1px solid #e9e6e750;
+    box-shadow: 0 0.5rem 2rem 0 rgba(0, 0, 0, 0.2);
+    border-radius: 0.6rem;
+    
+    display: flex;
+    flex-direction: column;
+    
+    transition: background 0.3s ease, border-color 0.3s ease;
+}
+
+.item:hover {
+    background: #22222260;
+}
+
+
+/* HEADER */
+.questionHeader {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+    padding: 1.5rem;
+    min-height: 5rem;
+    color: var(--color-black);
+}
+
+.iconWrapper svg {
+    width: 28px;
+    height: 28px;
+    opacity: 0.8;
+}
+
+.questionText {
+    flex: 1;
+    font-size: var(--text-header);
+    font-weight: bold;
+}
+
+/* ICON */
+.toggleIcon svg {
+    width: 24px;
+    height: 24px;
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ICON ROTATION */
+.item.open .toggleIcon svg {
+    transform: rotate(45deg); 
+}
+
+/* ANIMATION */
+.answerCollapse {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.item.open .answerCollapse {
+    grid-template-rows: 1fr;
+}
+
+.answerContent {
+    display: flex;
+    overflow: hidden;
+    opacity: 0;
+    padding: 0 1.5rem 0rem 1.5rem;
+    padding-left: calc(1.5rem + 1.5rem + 1.5rem);
+    transform: translateY(-10px);
+    transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.item.open .answerContent {
+    opacity: 1;
+    transform: translateY(0);
+    padding: 0 1.5rem 1.5rem 1.5rem;
+    padding-left: calc(1.5rem + 1.5rem + 1.5rem);
+
+.answerContent p {
+    font-size: var(--text-p);
+    color: var(--color-black);
+    margin: 0;
+}
+
+/* BREAKPOINTS */
+
+@media (max-width: 768px) {
+    .questionHeader {
+        padding: 1rem;
+        gap: 1rem;
+    }
+    
+    .questionText {
+        font-size: 1rem;
+    }
+    
+    .iconWrapper svg {
+        width: 24px;
+        height: 24px;
+    }
+
+    .item.open .answerContent {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+}
