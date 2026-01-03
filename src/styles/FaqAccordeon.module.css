@@ -6,20 +6,17 @@
     overflow: hidden;
     
     /* GLASSMORPHISM */
-    background: #22222240;
+    background: #22222230;
     backdrop-filter: blur(0.125rem);
-    border: 1px solid #e9e6e750;
+    border: 1px solid #e9e6e718;
     box-shadow: 0 0.5rem 2rem 0 rgba(0, 0, 0, 0.2);
     border-radius: 0.6rem;
-    
-    display: flex;
-    flex-direction: column;
     
     transition: background 0.3s ease, border-color 0.3s ease;
 }
 
 .item:hover {
-    background: #22222260;
+    background: #22222240;
 }
 
 
