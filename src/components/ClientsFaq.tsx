@@ -38,6 +38,20 @@ export default function ClientsFaq() {
                         />
                     ))}
                 </ul>
+
+                {/* ADDITIONAL */}
+                <div className={styles.additionalWrap}>
+                    <h5 className={overpass.className}>
+                        Маєте додаткові питання?
+                    </h5>
+                    <p>
+                        Залиште свій запит через форму нижче
+                    </p>
+
+                    <button className={styles.btn}>
+                        Відправити
+                    </button>
+                </div>
             </div>
             
         </section>

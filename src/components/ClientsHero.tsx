@@ -14,7 +14,7 @@ export default function ClientsHero() {
                 <div className={styles.headerWrap}>
                     <div className={styles.text}>
                         <h1 className={`${overpass.className}`}>
-                            Клієнтам Терно-Топ: корисна інформація та відповіді на ваші запитання
+                            Клієнтам <span style={{whiteSpace: 'nowrap'}}>Терно-Топ:</span> корисна інформація та відповіді на ваші запитання
                         </h1>
 
                         <h3 className={`${geologica.className}`}>

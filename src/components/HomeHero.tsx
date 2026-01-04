@@ -13,7 +13,7 @@ export default function HomeHero() {
                 <div className={styles.headerWrap}>
                     <div className={styles.text}>
                         <h1 className={`${overpass.className}`}>
-                            Протезування, ортопедичне взуття та засоби реабілітації у Тернополі
+                            Протезування, ортопедичне взуття та засоби реабілітації <span style={{whiteSpace: 'nowrap'}}>у Тернополі</span>
                         </h1>
                         <h3 className={`${geologica.className}`}>
                             індивідуальний підхід, гарантія якості, вже 10 років працюємо для Вас!

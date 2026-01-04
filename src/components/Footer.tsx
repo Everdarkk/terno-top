@@ -1,7 +1,7 @@
 import styles from '../styles/Footer.module.css'
 import Link from 'next/link'
 import Image from 'next/image'
-import {geologica, tektur} from '@/app/layout'
+import {tektur} from '@/app/layout'
 
 export default function Footer() {
     const navList = [
@@ -24,7 +24,7 @@ export default function Footer() {
             <div className={styles.content}>
                 <div className={styles.textWrap}>
                     <div> 
-                        <h4 className={tektur.className}>
+                        <h4 className={`${tektur.className} ${styles.tt}`}>
                             Терно-Топ
                         </h4>
 
