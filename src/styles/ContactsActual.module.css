@@ -1,0 +1,55 @@
+.container {
+    background-color: var(--color-cold-gray);
+    min-height: 50dvh;
+}
+
+/* MAIN CONTENT */
+.content {
+    width: 100%;
+    max-width: 90rem;
+    /* background-color: rgba(255, 68, 0, 0.342); */
+    margin-inline: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 3.125rem;
+    padding-block: 3.125rem;
+}
+
+/* TOP SIDE */
+
+.topWrap {
+    /* background-color: rgba(137, 43, 226, 0.484); */
+    padding: var(--text-header);
+    display: flex;
+    align-items: center;
+    gap: var(--text-header);
+}
+
+/* TEXT */
+.textWrap {
+    display: flex;
+    flex-direction: column;
+
+    max-width: 40rem;
+    gap: var(--text-p);
+}
+.textWrap h5 {
+    font-size: var(--text-header);
+}
+.textWrap p {
+    font-size: var(--text-p);
+}
+
+/* BOT SIDE (MAP) */
+.botWrap {
+    display: flex;
+    justify-content: center;
+}
+
+/* BREAKPOINTS */
+
+@media (max-width: 550px) {
+    .topWrap {
+        flex-direction: column-reverse;
+    }
+}

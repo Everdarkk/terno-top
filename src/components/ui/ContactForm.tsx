@@ -5,6 +5,7 @@ import { useFormStatus } from 'react-dom'
 import { useEffect, useRef } from 'react'
 import { sendContactForm } from '../../actions/form/actions'
 import styles from '../../styles/ContactForm.module.css'
+import { overpass } from '@/app/layout'
 
 const initialState = {
   success: false,
@@ -61,6 +62,11 @@ export default function ContactForm() {
             {state.message}
           </div>
         )}
+
+        {/* TITLE */}
+        <h3 className={overpass.className}>
+          Форма для заповнення
+        </h3>
 
         {/* INPUTS */}
         <div className={styles.inputsGrid}>

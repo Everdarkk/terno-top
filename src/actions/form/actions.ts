@@ -2,17 +2,13 @@
 
 import nodemailer from 'nodemailer'
 
-/* =======================
-   TYPES
-======================= */
+// TYPES
 export type FormState = {
   success: boolean
   message: string
 }
 
-/* =======================
-   UTILS
-======================= */
+// UTILS
 function getValue(formData: FormData, key: string) {
   const value = formData.get(key)
   return typeof value === 'string' ? value.trim() : ''
@@ -28,9 +24,7 @@ function escapeHtml(str: string) {
   }[char]!))
 }
 
-/* =======================
-   MAILER (REUSED)
-======================= */
+// NODEMAILER
 const transporter = nodemailer.createTransport({
   service: 'gmail',
   auth: {
@@ -39,22 +33,20 @@ const transporter = nodemailer.createTransport({
   },
 })
 
-/* =======================
-   SERVER ACTION
-======================= */
+// SERVER ACTION
 export async function sendContactForm(
   prevState: FormState,
   formData: FormData
 ): Promise<FormState> {
 
-  /* --------- Extract --------- */
+  // EXTRACT
   const firstName = getValue(formData, 'firstName')
   const lastName  = getValue(formData, 'lastName')
   const email     = getValue(formData, 'email')
   const phone     = getValue(formData, 'phone')
   const message   = getValue(formData, 'message')
 
-  /* --------- Validation --------- */
+  // VALIDATION
   if (!firstName || !lastName || !email || !phone) {
     return {
       success: false,
@@ -70,7 +62,7 @@ export async function sendContactForm(
   }
 
   try {
-    /* --------- Send mail --------- */
+    // SEND MAIL
     await transporter.sendMail({
       from: `"Contact Form" <${process.env.EMAIL_USER}>`,
       to: process.env.EMAIL_USER,
