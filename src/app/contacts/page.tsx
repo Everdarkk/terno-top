@@ -1,7 +1,9 @@
+import ContactsHero from "@/components/ContactsHero"
+
 export default function ContactsPage() {
     return (
         <div>
-            CONTACTS PAGE
+            <ContactsHero />
         </div>
     )
 }
