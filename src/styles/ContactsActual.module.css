@@ -41,6 +41,15 @@
     font-size: var(--text-p);
 }
 
+/* CREDENTIALS */
+.credentialsWrap {
+    background-color: red;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+    gap: var(--text-header);
+
+}
+
 /* BOT SIDE (MAP) */
 .botWrap {
     display: flex;

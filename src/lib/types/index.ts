@@ -34,3 +34,9 @@ export type Question = {
   question: string,
   answer: string
 }
+
+export type Credential = {
+  title: string,
+  text: string,
+  imgSrc: string
+}

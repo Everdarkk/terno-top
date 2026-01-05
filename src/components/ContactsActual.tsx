@@ -1,6 +1,8 @@
 import styles from "../styles/ContactsActual.module.css"
 import ContactForm from "./ui/ContactForm"
 import GoogleMap from "./ui/GoogleMap"
+import Credentials from "./ui/Credentials"
+import { contactList } from "@/lib/data/contactList"
 
 export default function ContactsActual() {
     return (
@@ -22,7 +24,14 @@ export default function ContactsActual() {
                         </div>
                         {/* CREDENTIALS */}
                         <div className={styles.credentialsWrap}>
-                    
+                            {contactList.map(item => (
+                                <Credentials 
+                                    key={item.title} 
+                                    title={item.title} 
+                                    text={item.text}
+                                    imgSrc={item.imgSrc}                               
+                                />
+                            ))}
                         </div>
                     </div>
                 </div>
