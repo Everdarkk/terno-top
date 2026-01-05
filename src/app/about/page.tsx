@@ -1,7 +1,11 @@
+import AboutHero from "@/components/AboutHero"
+import AboutHistory from "@/components/AboutHistory"
+
 export default function AboutPage() {
     return (
         <div>
-            ABOUT PAGE
+            <AboutHero />
+            <AboutHistory />
         </div>
     )
 }

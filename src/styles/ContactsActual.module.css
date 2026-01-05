@@ -26,6 +26,17 @@
     gap: var(--text-header);
 }
 
+/* CONTACTS WRAP (RIGHT SIDE) */
+.contactsWrap {
+    width: clamp(30rem, 40vw, 50rem);
+    display: flex;
+    flex-direction: column;
+    gap: var(--text-title);
+    align-self: center;
+    justify-self: center;
+    padding: var(--text-p);
+}
+
 /* TEXT */
 .textWrap {
     display: flex;
@@ -43,11 +54,12 @@
 
 /* CREDENTIALS */
 .credentialsWrap {
-    background-color: red;
+    /* background-color: red; */
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
-    gap: var(--text-header);
-
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    /* gap: var(--text-header); */
+    gap: 2rem;
+    padding: var(--text-p);
 }
 
 /* BOT SIDE (MAP) */

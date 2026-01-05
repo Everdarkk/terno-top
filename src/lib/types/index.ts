@@ -40,3 +40,8 @@ export type Credential = {
   text: string,
   imgSrc: string
 }
+
+export type History = {
+    imgUrl: string;
+    text: string;
+}

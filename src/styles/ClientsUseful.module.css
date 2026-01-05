@@ -54,13 +54,6 @@
     font-size: var(--text-p);
 }
 
-/* INFO */
-.infoTitle {
-    z-index: 1;
-}
-
-
-
 /* TEXT WRAP */
 .textWrap {
     max-width: 90rem;
