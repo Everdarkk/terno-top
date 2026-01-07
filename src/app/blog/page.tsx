@@ -1,7 +1,9 @@
+import BlogHero from "@/components/BlogHero"
+
 export default function BlogPage() {
     return (
         <div>
-            BLOG PAGE
+            <BlogHero />
         </div>
     )
 }
