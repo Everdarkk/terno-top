@@ -21,6 +21,16 @@ export default async function BlogList() {
   return (
     <section className={styles.container}>
       <div className={styles.content}>
+        {/* TITLE */}
+                <div className={`${styles.title} ${overpass.className}`}>
+                    <h3>
+                        Список усіх публікацій
+                    </h3>
+
+                    {/* LINE */}
+                    <span className={styles.line}></span>
+                </div>
+
         {/* LIST OF ARTICLES */}
         <ul className={styles.articlesList}>
           {articles?.map(article => (
@@ -38,9 +48,9 @@ export default async function BlogList() {
                 
                 {/* TEXT WRAP */}
                 <div className={styles.textWrap}>
-                  {/* TITLE */}
+                  {/* ARTICLE TITLE */}
                   <h2 className={overpass.className}>{article.title}</h2>
-                  {/* TEXT */}
+                  {/* ARTICLE TEXT */}
                   <p>{article.article}</p>
                 </div>
         

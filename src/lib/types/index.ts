@@ -45,3 +45,11 @@ export type History = {
     imgUrl: string;
     text: string;
 }
+
+export type Article = {
+  id: string,
+  title: string,
+  article: string,
+  created_at: string,
+  imgUrl: string
+}

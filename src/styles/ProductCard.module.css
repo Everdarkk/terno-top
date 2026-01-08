@@ -70,11 +70,6 @@
   transition: transform 0.6s ease;
 }
 
-/* IMAGE HOVER */
-.container:hover .image {
-  transform: scale(1.06);
-}
-
 /* DETAILS */
 .textWrap {
   display: flex;
