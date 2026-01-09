@@ -31,13 +31,13 @@ export default function AdminLogin() {
 
   return (
     <form onSubmit={handleLogin} className={styles.form}>
-      <h1>Адмін-панель</h1>
 
       <input
         type="email"
         placeholder="Email"
         value={email}
         onChange={e => setEmail(e.target.value)}
+        className={styles.input}
         required
       />
 
@@ -46,12 +46,13 @@ export default function AdminLogin() {
         placeholder="Пароль"
         value={password}
         onChange={e => setPassword(e.target.value)}
+        className={styles.input}
         required
       />
 
-      {error && <p>{error}</p>}
+      {error && <p className={styles.error}>{error}</p>}
 
-      <button type="submit">Увійти</button>
+      <button className={styles.btn} type="submit">Увійти</button>
     </form>
   )
 }

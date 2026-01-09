@@ -2,11 +2,15 @@
 
 import { useState } from 'react'
 import { upsertArticle } from '@/app/administration/actions'
+import { useRouter } from 'next/navigation'
 
 export default function ArticleForm({ article }: { article?: any }) {
   const [title, setTitle] = useState(article?.title ?? '')
   const [text, setText] = useState(article?.article ?? '')
   const [imgUrl, setImgUrl] = useState(article?.imgUrl ?? '')
+  
+  // ROUTER
+  const router = useRouter()
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault()
@@ -17,6 +21,8 @@ export default function ArticleForm({ article }: { article?: any }) {
       article: text,
       imgUrl,
     })
+
+    router.refresh()
   }
 
   return (

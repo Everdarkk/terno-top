@@ -1,5 +1,7 @@
 .container {
-    min-height: 50dvh;
+    background-color: var(--color-space);
+    color: var(--color-platinum);
+    min-height: 100dvh;
     display: flex;
     flex-direction: column;
     place-content: center;

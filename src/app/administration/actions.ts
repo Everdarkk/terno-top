@@ -11,7 +11,23 @@ export async function upsertArticle(data: {
 }) {
   const supabase = await createClient()
 
-  await supabase.from('articles').upsert(data)
+  const payload = {
+    id: data.id,
+    title: data.title,
+    article: data.article,
+    imgUrl: data.imgUrl,
+  }
+
+  const { error } = await supabase
+    .from('articles')
+    .upsert(payload, {
+      onConflict: 'id', // ❗ КЛЮЧОВИЙ ФІКС
+    })
+
+  if (error) {
+    console.error('UPSERT ERROR:', error)
+    throw new Error('Не вдалося зберегти статтю')
+  }
 
   revalidatePath('/administration')
   revalidatePath('/blog')
@@ -20,7 +36,15 @@ export async function upsertArticle(data: {
 export async function deleteArticle(id: string) {
   const supabase = await createClient()
 
-  await supabase.from('articles').delete().eq('id', id)
+  const { error } = await supabase
+    .from('articles')
+    .delete()
+    .eq('id', id)
+
+  if (error) {
+    console.error('DELETE ERROR:', error)
+    throw new Error('Не вдалося видалити статтю')
+  }
 
   revalidatePath('/administration')
   revalidatePath('/blog')

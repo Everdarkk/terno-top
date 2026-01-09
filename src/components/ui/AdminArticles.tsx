@@ -2,8 +2,11 @@
 
 import { deleteArticle } from '@/app/administration/actions'
 import ArticleForm from './ArticleForm'
+import { useRouter } from 'next/navigation'
 
 export default function AdminArticles({ articles }: { articles: any[] }) {
+  const router = useRouter()
+
   return (
     <>
       <ArticleForm />
@@ -13,7 +16,11 @@ export default function AdminArticles({ articles }: { articles: any[] }) {
           <li key={article.id}>
             <strong>{article.title}</strong>
 
-            <button onClick={() => deleteArticle(article.id)}>
+            <button onClick={async () => {
+                await deleteArticle(article.id)
+                router.refresh()
+              }}
+            >
               Видалити
             </button>
 
