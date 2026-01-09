@@ -1,6 +1,7 @@
 'use server'
 
 import { createClient } from '@/lib/supabase/server'
+import { createAdminClient } from '@/lib/supabase/admin'
 import { revalidatePath } from 'next/cache'
 
 export async function upsertArticle(data: {
@@ -21,7 +22,7 @@ export async function upsertArticle(data: {
   const { error } = await supabase
     .from('articles')
     .upsert(payload, {
-      onConflict: 'id', // ❗ КЛЮЧОВИЙ ФІКС
+      onConflict: 'id',
     })
 
   if (error) {
@@ -33,18 +34,50 @@ export async function upsertArticle(data: {
   revalidatePath('/blog')
 }
 
+
+// STORAGE EXTRACT
+function extractStoragePath(publicUrl: string) {
+  const marker = '/storage/v1/object/public/TernoTop/'
+  const index = publicUrl.indexOf(marker)
+  if (index === -1) return null
+  return publicUrl.slice(index + marker.length)
+}
+
 export async function deleteArticle(id: string) {
   const supabase = await createClient()
+  const admin = createAdminClient()
 
-  const { error } = await supabase
+  // ARTICLE FETCH
+  const { data: article, error } = await supabase
+    .from('articles')
+    .select('imgUrl')
+    .eq('id', id)
+    .single()
+
+  if (error) throw error
+
+  // SERVICE ROLE DELETION FROM STORAGE
+  if (article?.imgUrl) {
+    const filePath = extractStoragePath(article.imgUrl)
+
+    if (filePath) {
+      const { error: storageError } = await admin.storage
+        .from('TernoTop')
+        .remove([filePath])
+
+      if (storageError) {
+        console.error('STORAGE DELETE ERROR:', storageError)
+      }
+    }
+  }
+
+  // ARTICLE DELETION
+  const { error: deleteError } = await supabase
     .from('articles')
     .delete()
     .eq('id', id)
 
-  if (error) {
-    console.error('DELETE ERROR:', error)
-    throw new Error('Не вдалося видалити статтю')
-  }
+  if (deleteError) throw deleteError
 
   revalidatePath('/administration')
   revalidatePath('/blog')

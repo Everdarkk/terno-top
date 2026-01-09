@@ -1,5 +1,6 @@
 'use client'
 
+import styles from "../../styles/AdminArticles.module.css"
 import { deleteArticle } from '@/app/administration/actions'
 import ArticleForm from './ArticleForm'
 import { useRouter } from 'next/navigation'
@@ -8,12 +9,15 @@ export default function AdminArticles({ articles }: { articles: any[] }) {
   const router = useRouter()
 
   return (
-    <>
-      <ArticleForm />
+    <div className={styles.container}>
+      <div className={styles.newWrap}>
+        <h6>Нова стаття</h6>
+        <ArticleForm />
+      </div>
 
-      <ul>
+      <ul className={styles.listWrap}>
         {articles.map(article => (
-          <li key={article.id}>
+          <li key={article.id} className={styles.articleWrap}>
             <strong>{article.title}</strong>
 
             <button onClick={async () => {
@@ -28,6 +32,6 @@ export default function AdminArticles({ articles }: { articles: any[] }) {
           </li>
         ))}
       </ul>
-    </>
+    </div>
   )
 }
