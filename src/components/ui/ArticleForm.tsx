@@ -4,6 +4,7 @@ import { useState } from 'react'
 import { createClient } from '@/lib/supabase/client'
 import { upsertArticle } from '@/app/administration/actions'
 import { useRouter } from 'next/navigation'
+import styles from '../../styles/ArticleForm.module.css'
 
 export default function ArticleForm({ article }: { article?: any }) {
   const supabase = createClient()
@@ -20,25 +21,20 @@ export default function ArticleForm({ article }: { article?: any }) {
 
     let imgUrl = article?.imgUrl ?? ''
 
-    // IMAGE UPLOAD
     if (file) {
       const fileExt = file.name.split('.').pop()
       const fileName = `${crypto.randomUUID()}.${fileExt}`
 
-      const { error: uploadError } = await supabase.storage
+      const { error } = await supabase.storage
         .from('TernoTop')
-        .upload(fileName, file, {
-          cacheControl: '3600',
-          upsert: false,
-        })
+        .upload(fileName, file)
 
-      if (uploadError) {
+      if (error) {
         alert('Помилка завантаження фото')
         setLoading(false)
         return
       }
 
-      // PUBLIC URL
       const { data } = supabase.storage
         .from('TernoTop')
         .getPublicUrl(fileName)
@@ -46,7 +42,6 @@ export default function ArticleForm({ article }: { article?: any }) {
       imgUrl = data.publicUrl
     }
 
-    // ARTICLE SAVE
     await upsertArticle({
       id: article?.id,
       title,
@@ -59,30 +54,44 @@ export default function ArticleForm({ article }: { article?: any }) {
   }
 
   return (
-    <form onSubmit={handleSubmit}>
-      <input
-        placeholder="Заголовок"
-        value={title}
-        onChange={e => setTitle(e.target.value)}
-        required
-      />
+    <form onSubmit={handleSubmit} className={styles.form}>
+      <div className={styles.field}>
+        <label>Заголовок</label>
+        <input
+          value={title}
+          onChange={e => setTitle(e.target.value)}
+          required
+        />
+      </div>
 
-      <textarea
-        placeholder="Текст статті"
-        value={text}
-        onChange={e => setText(e.target.value)}
-        required
-      />
+      <div className={styles.field}>
+        <label>Текст статті</label>
+        <textarea
+          value={text}
+          onChange={e => setText(e.target.value)}
+          rows={6}
+          required
+        />
+      </div>
 
-      <input
-        type="file"
-        accept="image/*"
-        onChange={e => setFile(e.target.files?.[0] ?? null)}
-      />
+      {!article && <div className={styles.field}>
+        <label>Зображення</label>
+        <input
+          type="file"
+          accept="image/*"
+          onChange={e => setFile(e.target.files?.[0] ?? null)}
+        />
+      </div>}
 
-      <button type="submit" disabled={loading}>
-        {loading ? 'Збереження...' : article ? 'Оновити' : 'Додати'}
-      </button>
+      <div className={styles.footer}>
+        <button
+          type="submit"
+          disabled={loading}
+          className={styles.submit}
+        >
+          {loading ? 'Збереження…' : article ? 'Оновити статтю' : 'Додати статтю'}
+        </button>
+      </div>
     </form>
   )
 }

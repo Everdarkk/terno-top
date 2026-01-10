@@ -1,6 +1,7 @@
 import styles from "../../styles/AdminPage.module.css"
 import { createClient } from '@/lib/supabase/server'
 import AdminArticles from '@/components/ui/AdminArticles'
+import Image from "next/image"
 
 export default async function AdministrationPage() {
   const supabase = await createClient()
@@ -12,8 +13,18 @@ export default async function AdministrationPage() {
 
   return (
     <section className={styles.container}>
-      <h1>Керування статтями</h1>
-      <AdminArticles articles={articles ?? []} />
+        {/* IMAGE */}
+        <Image
+          src={'/images/pics/history-3.webp'}
+          alt={'Адміністрація'}
+          width={2000}
+          height={1000}
+          className={styles.image}
+        />
+      <div className={styles.content}>
+        <h1>Керування статтями</h1>
+        <AdminArticles articles={articles ?? []} />
+      </div>
     </section>
   )
 }

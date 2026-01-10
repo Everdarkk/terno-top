@@ -1,11 +1,116 @@
 .container {
-    background-color: blueviolet;
-    display: flex;
-    flex-direction: column;
-    gap: var(--text-header);
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+  padding: var(--text-title);
 }
 
+/* NEW ARTICLE */
 .newWrap {
-    display: flex;
-    flex-direction: column;
+  padding: var(--text-p);    
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  border: 1px solid #e9e7e650;
+  border-radius: 0.6rem;
+
+}
+
+.newWrap h6 {
+    font-size: var(--text-header);
+}
+
+/* LIST */
+.listWrap {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+/* ARTICLE */
+.articleWrap {
+  display: flex;
+  flex-direction: column;
+  padding: var(--text-p);
+  border: 1px solid #e9e7e650;
+  border-radius: 0.6rem;
+}
+
+/* HEADER */
+.mainWrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* ACTIONS */
+.actions {
+  display: flex;
+  gap: 0.4rem;
+}
+
+/* BASE ICON BUTTON */
+.iconButton {
+  --size: 36px;
+
+  width: var(--size);
+  height: var(--size);
+  display: grid;
+  place-items: center;
+
+  background: transparent;
+  border: none;
+  border-radius: 10px;
+
+  cursor: pointer;
+  color: #9ca3af;
+
+  transition:
+    background-color 0.25s ease,
+    color 0.25s ease,
+    transform 0.2s ease;
+}
+
+/* EDIT */
+.iconButton.edit {
+  color: #94a3b8;
+}
+
+@media (hover: hover) {
+  .iconButton.edit:hover {
+    background-color: rgba(59, 130, 246, 0.12);
+    color: #3b82f6;
+    transform: scale(1.05);
+  }
+}
+
+/* DELETE */
+.iconButton.delete {
+  color: #9ca3af;
+}
+
+@media (hover: hover) {
+  .iconButton.delete:hover {
+    background-color: rgba(239, 68, 68, 0.12);
+    color: #ef4444;
+    transform: scale(1.05);
+  }
+}
+
+/* MOBILE TAP */
+.iconButton:active {
+  transform: scale(0.92);
+}
+
+/* FOCUS */
+.iconButton:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 2px;
+}
+
+/* EDITOR */
+.editorWrap {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px dashed #e5e7eb;
 }
