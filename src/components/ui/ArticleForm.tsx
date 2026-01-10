@@ -16,45 +16,54 @@ export default function ArticleForm({ article }: { article?: any }) {
   const [loading, setLoading] = useState(false)
 
   async function handleSubmit(e: React.FormEvent) {
-    e.preventDefault()
-    setLoading(true)
+  e.preventDefault()
+  setLoading(true)
 
-    let imgUrl = article?.imgUrl ?? ''
+  let imgUrl = article?.imgUrl ?? ''
 
-    if (file) {
-      const fileExt = file.name.split('.').pop()
-      const fileName = `${crypto.randomUUID()}.${fileExt}`
+  if (file) {
+    const fileExt = file.name.split('.').pop()
+    const fileName = `${crypto.randomUUID()}.${fileExt}`
 
-      const { error } = await supabase.storage
-        .from('TernoTop')
-        .upload(fileName, file)
+    const { error } = await supabase.storage
+      .from('TernoTop')
+      .upload(fileName, file)
 
-      if (error) {
-        alert('Помилка завантаження фото')
-        setLoading(false)
-        return
-      }
-
-      const { data } = supabase.storage
-        .from('TernoTop')
-        .getPublicUrl(fileName)
-
-      imgUrl = data.publicUrl
+    if (error) {
+      alert('Помилка завантаження фото')
+      setLoading(false)
+      return
     }
 
-    await upsertArticle({
-      id: article?.id,
-      title,
-      article: text,
-      imgUrl,
-    })
+    const { data } = supabase.storage
+      .from('TernoTop')
+      .getPublicUrl(fileName)
 
-    router.refresh()
-    setLoading(false)
+    imgUrl = data.publicUrl
   }
+
+  await upsertArticle({
+    id: article?.id,
+    title,
+    article: text,
+    imgUrl,
+  })
+
+  // RESET ONLY FOR "NEW ARTICLE"
+  if (!article) {
+    setTitle('')
+    setText('')
+    setFile(null)
+  }
+
+  router.refresh()
+  setLoading(false)
+}
+
 
   return (
     <form onSubmit={handleSubmit} className={styles.form}>
+      {/* TITLE */}
       <div className={styles.field}>
         <label>Заголовок</label>
         <input
@@ -64,6 +73,7 @@ export default function ArticleForm({ article }: { article?: any }) {
         />
       </div>
 
+      {/* TEXT */}
       <div className={styles.field}>
         <label>Текст статті</label>
         <textarea
@@ -74,6 +84,7 @@ export default function ArticleForm({ article }: { article?: any }) {
         />
       </div>
 
+      {/* IMAGE UPLOAD */}
       {!article && <div className={styles.field}>
         <label>Зображення</label>
         <input
@@ -83,6 +94,7 @@ export default function ArticleForm({ article }: { article?: any }) {
         />
       </div>}
 
+      {/* BUTTON */}
       <div className={styles.footer}>
         <button
           type="submit"

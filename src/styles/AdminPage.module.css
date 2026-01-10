@@ -19,6 +19,11 @@
     padding: var(--text-header);
 }
 
+.mainWrap {
+    display: flex;
+    justify-content: space-between;
+}
+
 /* IMAGE */
 .image {
     width: 100%;

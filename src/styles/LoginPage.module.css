@@ -55,3 +55,10 @@
 .btn:active {
     transform: translateY(0.2rem);
 }
+
+/* ERROR */
+.error {
+    align-self: center;
+    font-size: var(--text-p);
+    color: crimson;
+}

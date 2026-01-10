@@ -2,6 +2,7 @@ import styles from "../../styles/AdminPage.module.css"
 import { createClient } from '@/lib/supabase/server'
 import AdminArticles from '@/components/ui/AdminArticles'
 import Image from "next/image"
+import LogoutButton from "@/components/ui/LogoutButton"
 
 export default async function AdministrationPage() {
   const supabase = await createClient()
@@ -22,7 +23,10 @@ export default async function AdministrationPage() {
           className={styles.image}
         />
       <div className={styles.content}>
-        <h1>Керування статтями</h1>
+        <div className={styles.mainWrap}>
+          <h1>Керування статтями</h1>
+          <LogoutButton />
+        </div>
         <AdminArticles articles={articles ?? []} />
       </div>
     </section>

@@ -1,0 +1,43 @@
+.logout {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: clamp(2rem, 5vw, 5rem);
+    height: clamp(2rem, 5vw, 5rem)s;
+
+    border-radius: 0.6rem;
+    border: 1px solid #e5e7eb;
+    background-color: transparent;
+
+    color: #6b7280;
+    cursor: pointer;
+
+    transition:
+        background-color 0.25s ease,
+        color 0.25s ease,
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+/* hover — desktop */
+@media (hover: hover) {
+  .logout:hover {
+    background-color: #f3f4f6;
+    color: #111827;
+    transform: translateY(-1px);
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.08);
+  }
+}
+
+/* active — mobile */
+.logout:active {
+  transform: translateY(0);
+  box-shadow: none;
+}
+
+/* focus */
+.logout:focus-visible {
+  outline: 2px solid #94a3b8;
+  outline-offset: 2px;
+}
