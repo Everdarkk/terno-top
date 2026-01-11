@@ -4,6 +4,7 @@ import { createClient } from '@/lib/supabase/server'
 import { createAdminClient } from '@/lib/supabase/admin'
 import { revalidatePath } from 'next/cache'
 
+// EDIT ARTICLE
 export async function upsertArticle(data: {
   id?: string
   title: string
@@ -43,6 +44,7 @@ function extractStoragePath(publicUrl: string) {
   return publicUrl.slice(index + marker.length)
 }
 
+// DELETE ARTICLE
 export async function deleteArticle(id: string) {
   const supabase = await createClient()
   const admin = createAdminClient()
@@ -81,4 +83,45 @@ export async function deleteArticle(id: string) {
 
   revalidatePath('/administration')
   revalidatePath('/blog')
+}
+
+// BUCKET
+const BUCKET = 'TernoTop'
+const FOLDER = '' // або 'articles', якщо використовуєш підпапку
+
+
+// IMAGE LIST
+export async function listImages() {
+  const admin = createAdminClient()
+
+  const { data, error } = await admin.storage
+    .from(BUCKET)
+    .list(FOLDER, {
+      limit: 100,
+      offset: 0,
+      sortBy: { column: 'created_at', order: 'desc' },
+    })
+
+  if (error) {
+    console.error('STORAGE LIST ERROR:', error)
+    throw new Error('Не вдалося отримати файли')
+  }
+
+  return data
+}
+
+// DELETE IMAGE
+export async function deleteImage(path: string) {
+  const admin = createAdminClient()
+
+  const { error } = await admin.storage
+    .from(BUCKET)
+    .remove([path])
+
+  if (error) {
+    console.error('STORAGE DELETE ERROR:', error)
+    throw new Error('Не вдалося видалити файл')
+  }
+
+  revalidatePath('/administration')
 }

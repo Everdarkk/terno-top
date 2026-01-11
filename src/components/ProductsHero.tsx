@@ -1,22 +1,22 @@
-import styles from "../styles/BlogHero.module.css"
+import styles from "../styles/ProductsHero.module.css"
 import { overpass } from "@/app/layout"
 import VideoBg from "./ui/VideoBg"
 
-export default function BlogHero() {
+export default function ProductsHero() {
     return (
         <section className={styles.container}>
             {/* VIDEO */}
-            <VideoBg src="/videos/video-5.webm"/>
+            <VideoBg src="/videos/video-6.webm"/>
             {/* CONTENT */}
             <div className={styles.content}>
                 {/* HEADER */}
                 <div className={styles.headerWrap}>
                     <div className={styles.text}>
                         <h1 className={`${overpass.className}`}>
-                            Блог ортопедичного центру Терно-Топ: експертні поради про здоров&apos;я ніг та хребта
+                            Каталог продукції ортопедичного центру Терно-Топ
                         </h1>
                         <p>
-                            читайте останні дослідження, поради наших ортопедів та рекомендації щодо вибору ортопедичного взуття, устілок та засобів реабілітації.
+                            ознайомтесь з нашими виробами, кожен з яких індивідуально підлаштований під Ваші потреби
                         </p>
                     </div>
                 </div>

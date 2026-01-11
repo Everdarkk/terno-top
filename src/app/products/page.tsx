@@ -1,7 +1,9 @@
+import ProductsHero from "@/components/ProductsHero"
+
 export default function ProductsPage() {
     return (
         <div>
-            PRODUCTS PAGE
+            <ProductsHero />
         </div>
     )
 }
