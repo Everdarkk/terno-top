@@ -76,6 +76,7 @@
 
 .textWrap p {
     font-size: var(--text-p);
+    line-height: 2em;
 }
 
 /* ADVICE WRAP */

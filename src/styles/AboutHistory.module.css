@@ -40,7 +40,9 @@
 }
 
 .textWrap p {
+    color: white;
     font-size: var(--text-p);
+    line-height: 2em;
 }
 
 
