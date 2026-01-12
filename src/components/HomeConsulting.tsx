@@ -3,6 +3,7 @@ import ConsultCard from "./ui/ConsultCard"
 import styles from "../styles/HomeConsulting.module.css"
 import { overpass, geologica } from "@/app/layout"
 import Image from "next/image"
+import Link from "next/link"
 
 export default function HomeConsulting() {
     return (
@@ -64,9 +65,9 @@ export default function HomeConsulting() {
                 </div>
 
                 {/* SIGN BUTTON */}
-                <button className={`${geologica.className} ${styles.btn}`}>
+                <Link href={'/form'} className={`${geologica.className} ${styles.btn}`}>
                     Записатись
-                </button>
+                </Link>
             </div>
 
         </section>

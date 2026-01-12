@@ -1,6 +1,7 @@
 import styles from "../styles/HomeHero.module.css"
 import { overpass, geologica } from "@/app/layout"
 import VideoBg from "./ui/VideoBg"
+import Link from "next/link"
 
 export default function HomeHero() {
     return (
@@ -21,9 +22,11 @@ export default function HomeHero() {
                     </div>
 
                     {/* BUTTON */}
-                    <button className={`${geologica.className} ${styles.btn}`}>
-                        Замовити
-                    </button>
+                    <Link href={'/form'}>
+                        <button className={`${geologica.className} ${styles.btn}`}>
+                            Замовити
+                        </button>
+                    </Link>
                 </div>
 
             </div>

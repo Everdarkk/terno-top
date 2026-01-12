@@ -20,14 +20,14 @@
 
 html {
   scrollbar-gutter: stable;
-  overflow-y: auto;
+  overflow-y: scroll;
   overflow-x: hidden;
-  
 }
 
 body {
   font-weight: 100;
   overflow-x: hidden;
+  background-color: var(--color-platinum);
 }
 
 ul, li {
