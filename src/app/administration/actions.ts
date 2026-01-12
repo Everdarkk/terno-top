@@ -87,31 +87,29 @@ export async function deleteArticle(id: string) {
 
 // BUCKET
 const BUCKET = 'TernoTop'
-const FOLDER = '' // або 'articles', якщо використовуєш підпапку
 
 
 // IMAGE LIST
-export async function listImages() {
+export async function getImages() {
   const admin = createAdminClient()
 
   const { data, error } = await admin.storage
     .from(BUCKET)
-    .list(FOLDER, {
+    .list('', {
       limit: 100,
-      offset: 0,
       sortBy: { column: 'created_at', order: 'desc' },
     })
 
   if (error) {
-    console.error('STORAGE LIST ERROR:', error)
-    throw new Error('Не вдалося отримати файли')
+    console.error(error)
+    throw new Error('Не вдалося отримати зображення')
   }
 
-  return data
+  return data ?? []
 }
 
-// DELETE IMAGE
-export async function deleteImage(path: string) {
+// REMOVE IMAGE
+export async function removeImage(path: string) {
   const admin = createAdminClient()
 
   const { error } = await admin.storage
@@ -119,8 +117,8 @@ export async function deleteImage(path: string) {
     .remove([path])
 
   if (error) {
-    console.error('STORAGE DELETE ERROR:', error)
-    throw new Error('Не вдалося видалити файл')
+    console.error(error)
+    throw new Error('Не вдалося видалити зображення')
   }
 
   revalidatePath('/administration')
