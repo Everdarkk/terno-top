@@ -2,7 +2,7 @@
 
 import { useState } from 'react'
 import styles from "../../styles/AdminArticles.module.css"
-import { deleteArticle } from '@/app/administration/actions'
+import { deleteArticle } from '@/actions/administration/actions'
 import ArticleForm from './ArticleForm'
 import { useRouter } from 'next/navigation'
 import DeleteIcon from "./DeleteIcon"

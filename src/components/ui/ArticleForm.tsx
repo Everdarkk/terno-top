@@ -2,7 +2,7 @@
 
 import { useState } from 'react'
 import { createClient } from '@/lib/supabase/client'
-import { upsertArticle } from '@/app/administration/actions'
+import { upsertArticle } from '@/actions/administration/actions'
 import { useRouter } from 'next/navigation'
 import styles from '../../styles/ArticleForm.module.css'
 

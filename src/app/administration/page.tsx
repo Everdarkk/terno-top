@@ -3,7 +3,6 @@ import { createClient } from '@/lib/supabase/server'
 import AdminArticles from '@/components/ui/AdminArticles'
 import Image from "next/image"
 import LogoutButton from "@/components/ui/LogoutButton"
-import ImageList from "@/components/ImageList"
 
 export default async function AdministrationPage() {
   const supabase = await createClient()
@@ -29,8 +28,6 @@ export default async function AdministrationPage() {
           <LogoutButton />
         </div>
         <AdminArticles articles={articles ?? []} />
-
-        <ImageList/>
       </div>
     </section>
   )
