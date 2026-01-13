@@ -11,36 +11,33 @@ export default function Modal({ children }: { children: React.ReactNode }) {
   useEffect(() => {
   const onKeyDown = (e: KeyboardEvent) => {
     if (e.key === 'Escape') router.back()
+
+    // KEYBOARD SCROLL LOCK
+    if (
+      e.key === 'ArrowDown' ||
+      e.key === 'ArrowUp' ||
+      e.key === 'PageDown' ||
+      e.key === 'PageUp' ||
+      e.key === 'Home' ||
+      e.key === 'End' ||
+      e.key === ' '
+    ) {
+      e.preventDefault()
+    }
   }
 
-  const html = document.documentElement
-  const body = document.body
-
-  const scrollY = window.scrollY
-
-  // save styles
-  const originalHtmlOverflow = html.style.overflow
-  const originalBodyPosition = body.style.position
-  const originalBodyTop = body.style.top
-  const originalBodyWidth = body.style.width
-
-  // lock scroll but keep scrollbar
-  html.style.overflow = 'hidden'
-  body.style.position = 'fixed'
-  body.style.top = `-${scrollY}px`
-  body.style.width = '100%'
+  const preventScroll = (e: Event) => {
+    e.preventDefault()
+  }
 
   window.addEventListener('keydown', onKeyDown)
+  window.addEventListener('wheel', preventScroll, { passive: false })
+  window.addEventListener('touchmove', preventScroll, { passive: false })
 
   return () => {
     window.removeEventListener('keydown', onKeyDown)
-
-    html.style.overflow = originalHtmlOverflow
-    body.style.position = originalBodyPosition
-    body.style.top = originalBodyTop
-    body.style.width = originalBodyWidth
-
-    window.scrollTo(0, scrollY)
+    window.removeEventListener('wheel', preventScroll)
+    window.removeEventListener('touchmove', preventScroll)
   }
 }, [router])
 

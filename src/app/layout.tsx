@@ -29,9 +29,9 @@ export default function RootLayout({
   return (
     <html lang="uk">
       <body className={geologica.className}>
+        {modal}
         <Navbar />
         {children}
-        {modal}
         <Footer />
       </body>
       

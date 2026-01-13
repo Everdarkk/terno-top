@@ -14,8 +14,8 @@
     /* GLASSMORPHISM */
     background: #22222250;
     backdrop-filter: blur(0.125rem);
-    border: 1px solid #efefef18; /* Тонка рамка */
-    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.2); /* М'яка тінь для об'єму */
+    border: 1px solid #efefef18;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.2);
     border-radius: 0.6rem;
     
     display: flex;
@@ -25,15 +25,14 @@
     
     /* APPEAR ANIMATION */
     opacity: 0;
-    animation: fadeIn 0.8s ease-out forwards;
+    animation: fadeIn 0.3s ease-out forwards;
 
-    background-color: #22222230; 
+    background-color: #292827; 
     backdrop-filter: blur(0.125rem);
     -webkit-backdrop-filter: blur(0.125rem);
     border: 1px solid #efefef18;
     border-radius: 0.6rem;
     box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.2);
-    
     display: flex;
     flex-direction: column;
     gap: 2rem;
@@ -63,6 +62,7 @@
 /* TITLE */
 .form h3 {
     font-size: var(--text-header);
+    color: var(--color-platinum);
     text-align: center;
 }
 
@@ -78,11 +78,12 @@
     width: 100%;
     background: rgba(255, 255, 255, 0.05);
     border: 1px solid rgba(255, 255, 255, 0.2);
-    border-radius: 12px;
+    border-radius: 0.6rem;
     padding: 1rem 1.25rem;
     
+    color: var(--color-platinum);
+    
     font-size: 1rem;
-    color: var(--color-black);
     font-family: inherit;
     
     outline: none;
@@ -90,7 +91,7 @@
 }
 
 .inputField::placeholder {
-    color: var(--color-black);
+    color: var(--color-platinum);
     font-weight: 300;
 }
 
@@ -129,8 +130,8 @@
     cursor: pointer;
     align-self: center;
     
-    color: var(--color-black);
-    background: #22222210;
+    color: var(--color-platinum);
+    background-color: var(--color-space);
     border: 1px solid #22222210;
     border-radius: 1.25rem;
     

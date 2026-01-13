@@ -5,6 +5,7 @@ import { faq } from "@/lib/data/faq"
 import styles from "../styles/ClientsFaq.module.css"
 import { overpass } from "@/app/layout"
 import FaqAccordeon from "./ui/FaqAccordeon"
+import Link from "next/link"
 
 export default function ClientsFaq() {
     const [activeIndex, setActiveIndex] = useState(null)
@@ -47,10 +48,12 @@ export default function ClientsFaq() {
                     <p>
                         Залиште свій запит через форму нижче
                     </p>
-
-                    <button className={styles.btn}>
-                        Відправити
-                    </button>
+                    {/* SEND BUTTON */}
+                    <Link href={'/form'}>
+                        <button className={styles.btn}>
+                            Відправити
+                        </button>
+                    </Link>
                 </div>
             </div>
             

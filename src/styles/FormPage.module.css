@@ -1,5 +1,5 @@
 .container {
-    background-color: var(--color-cold-gray);
+    background-color: var(--color-space);
     color: var(--color-platinum);
     min-height: 100dvh;
     display: flex;
