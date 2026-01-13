@@ -1,6 +1,6 @@
 'use client';
 
-import { APIProvider, Map, Marker } from '@vis.gl/react-google-maps';
+import { APIProvider, Map, AdvancedMarker } from '@vis.gl/react-google-maps';
 import styles from '../../styles/GoogleMap.module.css'
 
 // COORDINATES
@@ -22,7 +22,7 @@ export default function GoogleMap() {
           mapId={mapId}
         >
           {/* MARKER */}
-          <Marker position={BUSINESS_LOCATION} />
+          <AdvancedMarker position={BUSINESS_LOCATION} />
           
         </Map>
 
