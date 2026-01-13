@@ -48,9 +48,9 @@
 
 @media (max-width: 400px) {
     .container {
-        height: 100dvh;
+        height: max-content;
     }
     .image {
-        height: 100dvh;
+        height: 100%;
     }
 }

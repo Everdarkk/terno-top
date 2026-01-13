@@ -27,10 +27,11 @@
 .textWrap {
     max-width: 90rem;
     padding: clamp(2rem, 4vw, 3.5rem);
+    margin-block: 1rem;
     margin-inline: var(--text-title);
     /* GLASSMORPHISM */
     background: #22222250;
-    backdrop-filter: blur(0.125rem);
+    backdrop-filter: blur(1rem);
     border: 1px solid #efefef18;
     box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.2);
     border-radius: 0.6rem;
