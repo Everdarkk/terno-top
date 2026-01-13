@@ -3,18 +3,14 @@ import styles from "../../styles/ClientCard.module.css"
 import { overpass } from "@/app/layout"
 import { Review } from "@/lib/types"
 import RatingStars from "./RatingStars"
+import { AvatarPlaceholder } from "./AvatarPlaceholder"
 
 type Props = {
   client: Review
 }
 
 export default function ClientCard({ client }: Props) {
-  const { name, sex, rating, text } = client
-
-  const avatar =
-    sex === "male"
-      ? "https://xsgames.co/randomusers/avatar.php?g=male"
-      : "https://xsgames.co/randomusers/avatar.php?g=female"
+  const { name, rating, text } = client
 
   return (
     <li className={styles.listItem}>
@@ -22,14 +18,7 @@ export default function ClientCard({ client }: Props) {
         {/* HEADER */}
         <header className={styles.header}>
           <div className={styles.user}>
-            <Image
-              src={avatar}
-              alt={name}
-              width={48}
-              height={48}
-              className={styles.avatar}
-              draggable={false}
-            />
+            <AvatarPlaceholder name={name}/>
             <span className={`${styles.name} ${overpass.className}`}>
               {name}
             </span>
