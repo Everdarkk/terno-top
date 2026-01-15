@@ -1,0 +1,39 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    background-color: #22222230;
+    backdrop-filter: blur(0.125rem);
+    border: 1px solid #13131318; /* Тонка рамка */
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.2); /* М'яка тінь для об'єму */
+    border-radius: 0.6rem;
+
+    width: 80dvw;
+
+    padding: var(--text-header);
+}
+
+/* TITLE WRAP */
+.titleWrap {
+    display: flex;
+    gap: 1.25rem;
+}
+
+/* ICON */
+.icon {
+    height: 6.25rem;
+    width: 6.25rem;
+}
+
+/* TITLE */
+.title p {
+    font-size: var(--text-title);
+}
+
+.title h4 {
+    font-size: var(--text-header);
+}
+
+/* TEXT WRAP */
+.textWrap {
+    padding: var(--text-header);
+}

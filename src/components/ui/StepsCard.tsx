@@ -1,6 +1,7 @@
 import styles from "../../styles/StepsCard.module.css"
 import { StepCard } from "@/lib/types"
 import Image from "next/image"
+import { overpass } from "@/app/layout"
 
 export default function StepsCard({ id, title, iconUrl, children}: StepCard) {
     return (
@@ -22,7 +23,7 @@ export default function StepsCard({ id, title, iconUrl, children}: StepCard) {
                         Крок {id}:
                     </p>
 
-                    <h4>
+                    <h4 className={overpass.className}>
                         {title}
                     </h4>
                 </div>

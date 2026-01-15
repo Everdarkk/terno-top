@@ -39,3 +39,11 @@
     border-radius: 2px;
     background-color: var(--color-black);
 }
+
+/* STEPS */
+.stepsWrap {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+    align-items: center;
+}
