@@ -53,3 +53,10 @@ export type Article = {
   created_at: string,
   imgUrl: string
 }
+
+export type StepCard = {
+    id: number,
+    title: string,
+    iconUrl: string,
+    children: React.ReactNode
+}
