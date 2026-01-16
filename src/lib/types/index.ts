@@ -55,8 +55,15 @@ export type Article = {
 }
 
 export type StepCard = {
-    id: number,
-    title: string,
-    iconUrl: string,
-    children: React.ReactNode
+  id: number,
+  title: string,
+  iconUrl: string,
+  children: React.ReactNode
+}
+
+export type Category = {
+  id: number,
+  title: string,
+  description: string,
+  imageUrl: string
 }
