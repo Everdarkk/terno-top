@@ -10,7 +10,7 @@
     max-width: 90rem;
     /* background-color: rgba(255, 68, 0, 0.342); */
     margin-inline: auto;
-    padding-block: 0;
+    padding-top: var(--text-header);
     display: flex;
     flex-direction: column;
     justify-content: end;

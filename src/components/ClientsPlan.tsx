@@ -26,7 +26,7 @@ export default function ClientsPlan() {
                         iconUrl={first.iconUrl}
                     >
                         {/* CHILDREN */}
-                        <ul>
+                        <ul className={styles.need}>
                             Потребу визначають:
 
                             <li>
@@ -43,11 +43,11 @@ export default function ClientsPlan() {
                             </li>
                         </ul>
 
-                        <p>
+                        <p className={styles.needP}>
                             За результатами огляду особи зазначеними уповноваженими установами визначається потреба у формі документа – Висновку щодо необхідності забезпечення допоміжними засобами реабілітації.
                         </p>
 
-                        <p>
+                        <p className={styles.needP}>
                             Експертні команди з оцінювання повсякденного функціонування особи надають витяг з рішенням та рекомендаціями.
                         </p>
                     </StepsCard>

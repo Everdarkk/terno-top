@@ -7,7 +7,7 @@
     box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.2); /* М'яка тінь для об'єму */
     border-radius: 0.6rem;
 
-    width: 80dvw;
+    width: clamp(50rem, 50vw, 70rem);
 
     padding: var(--text-header);
 }
@@ -36,4 +36,7 @@
 /* TEXT WRAP */
 .textWrap {
     padding: var(--text-header);
+    display: flex;
+    flex-direction: column;
+    gap: var(--text-p);
 }

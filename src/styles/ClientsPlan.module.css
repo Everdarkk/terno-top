@@ -12,7 +12,7 @@
     max-width: 90rem;
     /* background-color: rgba(255, 68, 0, 0.342); */
     margin-inline: auto;
-    padding-block: 0;
+    padding-block: var(--text-header);
     display: flex;
     flex-direction: column;
     justify-content: end;
@@ -46,4 +46,28 @@
     flex-direction: column;
     gap: 2.5rem;
     align-items: center;
+}
+
+/* STEP ONE */
+.need {
+    font-size: var(--text-p);
+    font-weight: bold;
+}
+.need li {
+    list-style-type: disc;
+    font-weight: 100;
+}
+.needP {
+    font-size: var(--text-p);
+}
+
+/* BREAKPOINTS */
+@media (max-width: 800px) {
+    .title {
+        flex-direction: column;
+    }
+    .title h3 {
+        white-space: wrap;
+        text-align: center;
+    }
 }
