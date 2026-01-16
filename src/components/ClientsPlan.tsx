@@ -2,6 +2,7 @@ import styles from "../styles/ClientsPlan.module.css"
 import { overpass } from "@/app/layout"
 import { first, second, third } from "@/lib/data/plan"
 import StepsCard from "./ui/StepsCard"
+import Image from "next/image"
 
 export default function ClientsPlan() {
     return (
@@ -52,6 +53,15 @@ export default function ClientsPlan() {
                         </p>
                     </StepsCard>
 
+                    {/* ARROW */}
+                    <Image
+                        src={'/images/utils/next-step.png'}
+                        alt="Arrow"
+                        width={500}
+                        height={500}
+                        className={styles.arrow}
+                    />
+
                     {/* STEP 2*/}
                     <StepsCard 
                         id={second.id}
@@ -59,11 +69,11 @@ export default function ClientsPlan() {
                         iconUrl={second.iconUrl}
                     >
                         {/* CHILDREN */}
-                        <p>
+                        <p className={styles.needP}>
                             Документи подаються очно або дистанційно, особисто або через уповноваженого представника
                         </p>
 
-                        <ul>
+                        <ul className={styles.need}>
                             Очно:
                             <li>
                                 до центру надання адміністративних послуг (ЦНАП)
@@ -76,7 +86,7 @@ export default function ClientsPlan() {
                             </li>
                         </ul>
 
-                        <ul>
+                        <ul className={styles.need}>
                             Дистанційно:
                             <li>
                                 через електронний кабінет особи
@@ -89,7 +99,7 @@ export default function ClientsPlan() {
                             </li>
                         </ul>
 
-                        <ul>
+                        <ul className={styles.need}>
                             Одночасно із заявою слід подати оригінали і копії таких документів:
                             <li>
                                 паспорта громадянина/-ки України, тимчасового посвідчення громадянина/-ки України, посвідки на постійне проживання, посвідчення біженця/-ки, посвідчення особи, яка потребує додаткового захисту (далі – документ, що посвідчує особу), свідоцтва про народження (для дітей віком до 14 років)
@@ -105,7 +115,7 @@ export default function ClientsPlan() {
                             </li>
                         </ul>
 
-                        <ul>
+                        <ul className={styles.need}>
                             Військовослужбовці/-виці та постраждалі додатково подають копії таких документів (з пред’явленням оригіналів):
                             <li>
                                 довідки про обставини травми (поранення, контузії, каліцтва), виданої командиром військової частини (начальником територіального підрозділу), або іншого документа з відомостями про участь в антитерористичній операції, перебуваючи безпосередньо в районі та у період проведення антитерористичної операції, у здійсненні заходів із забезпечення національної безпеки і оборони, відсічі та стримування збройної агресії рф у Донецькій та Луганській областях, перебуваючи безпосередньо в районі та у період здійснення зазначених заходів, у заходах, необхідних для забезпечення оборони України, захисту безпеки населення та інтересів держави у зв’язку з військовою агресією рф проти України (для осіб, визначених пунктами 19– 23 частини першої статті 6 Закону України «Про статус ветеранів війни, гарантії їх соціального захисту», яким не встановлено інвалідність) (для військовослужбовців/-виць – за наявності)
@@ -119,13 +129,22 @@ export default function ClientsPlan() {
                         </ul>
                     </StepsCard>
 
+                    {/* ARROW */}
+                    <Image
+                        src={'/images/utils/next-step.png'}
+                        alt="Arrow"
+                        width={500}
+                        height={500}
+                        className={styles.arrow}
+                    />
+
                     {/* STEP 3 */}
                     <StepsCard 
                         id={third.id}
                         title={third.title}
                         iconUrl={third.iconUrl}
                     >
-                        <p>
+                        <p className={styles.needP}>
                             Людина самостійно обирає підприємство, яке здійснює забезпечення осіб засобами реабілітації за державні кошти.
                         </p>
                     </StepsCard>

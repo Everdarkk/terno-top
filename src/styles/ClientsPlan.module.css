@@ -1,5 +1,5 @@
 .container {
-    background-color: var(--color-ceil);
+    background-color: var(--color-cold-grey);
     width: 100%;
     color: var(--color-black);
     
@@ -59,6 +59,12 @@
 }
 .needP {
     font-size: var(--text-p);
+}
+
+/* ARROW */
+.arrow {
+    width: clamp(4.25rem, 5vw, 10rem);
+    height: auto;
 }
 
 /* BREAKPOINTS */
