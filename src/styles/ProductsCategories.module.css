@@ -1,95 +1,301 @@
 .container {
-    background-color: var(--color-old-black);
-    width: 100%;
-    min-height: 50dvh;
-    color: var(--color-platinum);
+  width: 100%;
+  min-height: 100dvh;
+  background-color: var(--color-old-black);
+  color: var(--color-platinum);
+  display: flex;
+  align-items: center;
 }
 
-/* MAIN CONTENT */
+/* WRAPPER */
 .content {
-    width: 100%;
-    max-width: 90rem;
-    /* background-color: rgba(255, 68, 0, 0.342); */
-    margin-inline: auto;
-    display: flex;
-    flex-direction: column;
-    justify-content: end;
-    gap: var(--text-header);
-    padding-block: var(--text-header);
+  width: 100%;
+  max-width: 90rem;
+  margin-inline: auto;
+  padding: clamp(2rem, 5vw, 4rem);
+  display: flex;
+  flex-direction: column;
+  gap: clamp(2rem, 4vw, 3.5rem);
 }
 
 /* TITLE */
 .title {
-    font-size: var(--text-title);
-    color: var(--color-platinum);
-    padding: 1.25rem;
-    display: flex;
-    align-items: center;
-    gap: 1.25rem;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
 }
+
 .title h3 {
-    white-space: nowrap;
-    font-size: var(--text-title);
-    font-weight: bold;
+  font-size: var(--text-title);
+  font-weight: 700;
+  white-space: nowrap;
 }
 
 .line {
-    width: 100%;
-    height: 3px;
-    border-radius: 2px;
-    background-color: var(--color-platinum);
+  flex: 1;
+  height: 2px;
+  background-color: var(--color-platinum);
+  opacity: 0.4;
 }
 
 /* BODY */
 .body {
-  margin-top: 3rem;
+  width: 100%;
+  display: flex;
+  justify-content: center;
 }
 
 /* GRID */
-.categoriesGrid {
+.grid {
+  width: 100%;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-  gap: 1.5rem;
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(min(100%, 18rem), 1fr)
+  );
+  gap: clamp(1.5rem, 3vw, 3rem);
+  padding: var(--text-header);
 }
 
-.categoryCard {
-  padding: 2rem;
-  background: #f5f5f5;
-  border: none;
+/* GRID ANIMATION */
+.gridEnter {
+  animation: gridFadeIn 0.5s ease forwards;
+}
+
+.gridExit {
+  animation: gridFadeOut 0.3s ease forwards;
+}
+
+/* --- NEW WRAPPER --- */
+/* Цей елемент відповідає за місце в сітці та анімацію появи */
+.cardWrapper {
+  position: relative;
+  aspect-ratio: 1 / 1;
+  opacity: 0; /* Приховуємо до початку анімації */
+  
+  /* ТІЛЬКИ анімація появи */
+  animation: cardStagger 0.5s ease forwards;
+  will-change: transform, opacity;
+}
+
+/* --- CARD --- */
+/* Цей елемент відповідає за вигляд, клік та ховер */
+.card {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  border-radius: 0.6rem;
+  background-size: cover;
+  background-position: center;
+  border: 1px solid #22222250;
+  overflow: hidden;
   cursor: pointer;
-  transition: transform 0.2s ease, background 0.2s ease;
+  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  /* Тут прибираємо початкову анімацію opacity, бо вона тепер у батька */
+  /* і залишаємо тільки transition для ховера */
+  transition:
+    transform 0.35s cubic-bezier(0.2, 0.8, 0.2, 1),
+    box-shadow 0.35s ease;
+    
+  will-change: transform, box-shadow;
 }
 
-.categoryCard:hover {
-  transform: translateY(-4px);
-  background: #ececec;
+/* HOVER — FULL CARD LIFT */
+/* Тепер це спрацює, бо transform тут не заблокований анімацією */
+.card:hover {
+  transform: translateY(-12px) scale(1.025);
+  box-shadow:
+    0 12px 30px rgba(0, 0, 0, 0.45),
+    0 30px 60px rgba(0, 0, 0, 0.35);
+  
+  /* Піднімаємо z-index, щоб картка перекривала сусідні */
+  z-index: 10; 
+}
+
+/* OVERLAY */
+.overlay {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(
+      to top,
+      rgba(0, 0, 0, 0.65),
+      rgba(0, 0, 0, 0.15)
+    );
+  transition: opacity 0.3s ease;
+}
+
+.card:hover .overlay {
+  opacity: 0.85;
+}
+
+/* CARD TITLE — STATIC */
+.cardTitle {
+  position: relative;
+  z-index: 1;
+  font-size: var(--text-header);
+  font-weight: bold;
+  text-align: center;
+  padding: var(--text-p);
+  margin: var(--text-p);
+  color: var(--color-platinum);
+
+  backdrop-filter: blur(0.8rem);
+  border-radius: 0.3rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 /* DETAILS */
-.categoryDetails {
-  animation: fadeIn 0.25s ease;
+.details {
+  max-width: 60rem;
+  width: 100%;
+  margin-inline: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  outline: none;
 }
 
+/* DETAILS ANIMATION */
+.detailsEnter {
+  animation: detailsFadeIn 0.45s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+}
+
+.detailsExit {
+  animation: detailsFadeOut 0.3s ease forwards;
+}
+
+.detailsImage {
+  width: 60%;
+  height: auto;
+  border-radius: 0.6rem;
+  object-fit: cover;
+  align-self: center;
+
+  animation: imageZoomIn 0.5s ease forwards;
+}
+
+.detailsTitle {
+  font-size: var(--text-title);
+  font-weight: bold;
+  width: 80%;
+  align-self: center;
+  text-align: center;
+
+  animation: textSlideUp 0.4s ease forwards;
+}
+
+.detailsText {
+  font-size: var(--text-p);
+  line-height: 2em;
+  width: 80%;
+  align-self: center;
+
+  animation: textFadeIn 0.4s ease forwards;
+}
+
+/* BACK */
 .backBtn {
-  margin-bottom: 1.5rem;
+  align-self: flex-start;
   background: none;
   border: none;
+  color: inherit;
   cursor: pointer;
-  font-size: 0.9rem;
   opacity: 0.7;
+  font-size: 0.9rem;
+  transition: opacity 0.25s ease, transform 0.25s ease;
 }
 
 .backBtn:hover {
   opacity: 1;
+  transform: translateX(-4px);
 }
 
-@keyframes fadeIn {
+/* KEYFRAMES */
+@keyframes cardStagger {
   from {
     opacity: 0;
-    transform: translateY(8px);
+    transform: translateY(24px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes gridFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes gridFadeOut {
+  from {
+    opacity: 1;
+    transform: scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: scale(0.98);
+  }
+}
+
+@keyframes detailsFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(24px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes detailsFadeOut {
+  from {
+    opacity: 1;
+    transform: scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: scale(0.98);
+  }
+}
+
+@keyframes imageZoomIn {
+  from {
+    opacity: 0;
+    transform: scale(1.06);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes textSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
   }
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+@keyframes textFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
   }
 }
