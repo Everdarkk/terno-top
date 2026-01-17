@@ -6,6 +6,7 @@ import { overpass } from '@/app/layout'
 import { categories } from '@/lib/data/categories'
 import { Category } from '@/lib/types'
 import Image from 'next/image'
+import Link from 'next/link'
 
 export default function ProductsCategories() {
   const [activeCategory, setActiveCategory] = useState<Category | null>(null)
@@ -126,6 +127,29 @@ export default function ProductsCategories() {
             </div>
           )}
         </div>
+
+        {/* DOWNLOAD LINK */}
+        <Link 
+          href="/catalog/ternotop.pdf" 
+          className={`${styles.link} ${overpass.className}`}
+          download='catalog.pdf'
+          target='_blank'
+          rel="noopener noreferrer"
+        >
+          <svg 
+            width="20" 
+            height="20" 
+            viewBox="0 0 24 24" 
+            fill="none" 
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path d="M12 16L12 4" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+            <path d="M8 12L12 16L16 12" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+            <path d="M4 20H20" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+          </svg>
+
+          Завантажити детальний каталог продукції (PDF)
+        </Link>
       </div>
     </section>
   )
