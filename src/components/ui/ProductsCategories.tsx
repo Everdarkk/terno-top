@@ -46,10 +46,14 @@ export default function ProductsCategories() {
     <section className={styles.container}>
       <div className={styles.content}>
         {/* TITLE */}
-        <header className={`${styles.title} ${overpass.className}`}>
-          <h3>Пропонуємо наші товари</h3>
+        <div className={`${styles.title} ${overpass.className}`}>
+          <h3>
+            Пропонуємо наші основні категорії товарів
+          </h3>
+
+          {/* LINE */}
           <span className={styles.line}></span>
-        </header>
+        </div>
 
         {/* BODY */}
         <div className={styles.body}>

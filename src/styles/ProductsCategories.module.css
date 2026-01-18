@@ -32,10 +32,10 @@
 }
 
 .line {
-  flex: 1;
-  height: 2px;
-  background-color: var(--color-platinum);
-  opacity: 0.4;
+    width: 100%;
+    height: 3px;
+    border-radius: 2px;
+    background-color: var(--color-platinum);
 }
 
 /* BODY */
@@ -67,19 +67,15 @@
 }
 
 /* --- NEW WRAPPER --- */
-/* Цей елемент відповідає за місце в сітці та анімацію появи */
 .cardWrapper {
   position: relative;
   aspect-ratio: 1 / 1;
-  opacity: 0; /* Приховуємо до початку анімації */
-  
-  /* ТІЛЬКИ анімація появи */
+  opacity: 0; 
   animation: cardStagger 0.5s ease forwards;
   will-change: transform, opacity;
 }
 
 /* --- CARD --- */
-/* Цей елемент відповідає за вигляд, клік та ховер */
 .card {
   width: 100%;
   height: 100%;
@@ -94,9 +90,6 @@
   display: flex;
   align-items: center;
   justify-content: center;
-
-  /* Тут прибираємо початкову анімацію opacity, бо вона тепер у батька */
-  /* і залишаємо тільки transition для ховера */
   transition:
     transform 0.35s cubic-bezier(0.2, 0.8, 0.2, 1),
     box-shadow 0.35s ease;
@@ -105,14 +98,12 @@
 }
 
 /* HOVER — FULL CARD LIFT */
-/* Тепер це спрацює, бо transform тут не заблокований анімацією */
 .card:hover {
   transform: translateY(-12px) scale(1.025);
   box-shadow:
     0 12px 30px rgba(0, 0, 0, 0.45),
     0 30px 60px rgba(0, 0, 0, 0.35);
   
-  /* Піднімаємо z-index, щоб картка перекривала сусідні */
   z-index: 10; 
 }
 
@@ -170,7 +161,7 @@
 }
 
 .detailsImage {
-  width: 60%;
+  width: clamp(30rem, 60vw, 50rem);
   height: auto;
   border-radius: 0.6rem;
   object-fit: cover;
@@ -222,6 +213,7 @@
     font-size: var(--text-header);
     text-align: center;
     display: flex;
+    align-items: center;
     gap: 1.25rem;
     align-self: center;
     color: var(--color-ceil);
@@ -323,5 +315,22 @@
   }
   to {
     opacity: 1;
+  }
+}
+
+/* BREAKPOINTS */
+@media (max-width: 620px) {
+    .title {
+        flex-direction: column;
+    }
+    .title h3 {
+        white-space: wrap;
+        text-align: center;
+    }
+}
+
+@media (max-width: 550px) {
+  .detailsImage {
+    width: 100%;
   }
 }
