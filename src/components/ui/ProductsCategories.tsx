@@ -132,6 +132,7 @@ export default function ProductsCategories() {
           )}
         </div>
 
+
         {/* DOWNLOAD LINK */}
         <Link 
           href="/catalog/ternotop.pdf" 

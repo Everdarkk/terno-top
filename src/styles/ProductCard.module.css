@@ -93,35 +93,3 @@
   font-size: clamp(0.8rem, 1.5vw, 1.05rem);
   opacity: 0.8;
 }
-
-/* BUTTON */
-.btn {
-    width: fit-content;
-    padding: 5% 7%;
-    font-size: clamp(0.5rem, 1vw, 1rem);
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    cursor: pointer;
-    
-    color: var(--color-platinum);
-    background: #ffffff10;
-    border: 1px solid #ffffff10;
-    border-radius: 1.25rem;
-    
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    text-decoration: none;
-    
-    text-shadow: none;
-}
-
-.btn:hover {
-    background: var(--color-ceil);
-    color: var(--color-black);
-    transform: translateY(-0.2rem);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-}
-
-.btn:active {
-    transform: translateY(0.2rem);
-}

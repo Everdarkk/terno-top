@@ -31,11 +31,6 @@ export default function ProductCard({ product }: Props) {
           <p>{materials}</p>
           <p>{season}</p>
         </div>
-
-        {/* DETAILS BUTTON */}
-        <button className={`${styles.btn} ${geologica.className}`}>
-          Детальніше
-        </button>
       </article>
     </li>
   )
