@@ -80,7 +80,7 @@
     /* background-color: lightgoldenrodyellow; */
     display: flex;
     flex-direction: column;
-    gap: 5rem;
+    gap: var(--text-header);
 }
 
 /* BUTTON */
