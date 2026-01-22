@@ -28,9 +28,9 @@
     gap: 1.25rem;
 }
 .title h3 {
-    white-space: nowrap;
     font-size: var(--text-title);
     font-weight: bold;
+    text-align: center;
 }
 
 .line {
