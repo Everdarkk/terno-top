@@ -35,32 +35,30 @@ export default async function BlogList() {
         <ul className={styles.articlesList}>
           {articles?.map(article => (
             <li key={article.id} className={styles.card}>
-                {/* IMAGE */}
-                <div className={styles.imageWrap}>
-                  <Image
-                    src={article.imgUrl}
-                    alt={article.title}
-                    width={1000}
-                    height={1000}
-                    className={styles.image}
-                  />
-                </div>
-                
-                {/* TEXT WRAP */}
-                <div className={styles.textWrap}>
-                  {/* ARTICLE TITLE */}
-                  <h2 className={overpass.className}>{article.title}</h2>
-                  {/* ARTICLE TEXT */}
-                  <p>{article.article}</p>
-                </div>
-        
-                {/* TIME */}
-                <time className={styles.time}>
-                  {new Date(article.created_at).toLocaleDateString()}
-                </time>
-
-                {/* READ BUTTON */}
-                <Link href={`/blog/${article.id}`}>
+                <Link href={`/blog/${article.id}`} className={styles.link}>
+                  {/* IMAGE */}
+                  <div className={styles.imageWrap}>
+                    <Image
+                      src={article.imgUrl}
+                      alt={article.title}
+                      width={1000}
+                      height={1000}
+                      className={styles.image}
+                    />
+                  </div>
+                  
+                  {/* TEXT WRAP */}
+                  <div className={styles.textWrap}>
+                    {/* ARTICLE TITLE */}
+                    <h2 className={overpass.className}>{article.title}</h2>
+                    {/* ARTICLE TEXT */}
+                    <p>{article.article}</p>
+                  </div>
+                  {/* TIME */}
+                  <time className={styles.time}>
+                    {new Date(article.created_at).toLocaleDateString()}
+                  </time>
+                  {/* READ BUTTON */}
                   <button className={styles.btn}>
                     Читати
                   </button>

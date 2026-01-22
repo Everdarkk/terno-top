@@ -56,15 +56,6 @@
   width: 100%;
   max-height: none;
 
-  display: flex;
-  flex-direction: column;
-  gap: 0.9rem;
-
-  align-items: center;
-  justify-content: space-between;
-
-  padding-bottom: 1.4rem;
-  overflow: hidden;
 
   border-radius: 0.6rem;
   border: 1px solid rgba(255, 255, 255, 0.08);
@@ -88,6 +79,17 @@
     border-color 0.45s ease;
 }
 
+.link {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+
+  align-items: center;
+  justify-content: space-between;
+
+  padding-bottom: 1.4rem;
+  overflow: hidden;
+}
 
 /* HOVER CARD */
 .card:hover {
@@ -151,6 +153,9 @@
   overflow: hidden;
 }
 
+.time {
+  color: var(--color-ceil);
+}
 
 /* BUTTON */
 .btn {
