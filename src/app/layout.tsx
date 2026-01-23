@@ -1,30 +1,7 @@
-import Navbar from "@/components/ui/Navbar"
-import Footer from "@/components/Footer"
 import "./globals.css"
-import { Geologica, Overpass, Tektur, Unbounded} from "next/font/google"
+import ClientLayout from "@/components/layout/ClientLayout"
+import { geologica } from "./fonts"
 import type { Metadata } from "next"
-
-// FONTS 
-
-export const geologica = Geologica({ 
-  subsets: ['latin', 'cyrillic'], 
-  weight: ['100', '200', '400', '600', '800', '900'] 
- })
-
-export const overpass = Overpass({ 
-  subsets: ['latin', 'cyrillic'], 
-  weight: ['100', '200', '400', '600', '800', '900'] 
-})
-
-export const tektur = Tektur({ 
-  subsets: ['latin', 'cyrillic'], 
-  weight: ['400', '700'] 
-})
-
-export const unbounded = Unbounded({ 
-  subsets: ['latin', 'cyrillic'], 
-  weight: ['400', '700', '800', '900'] 
-})
 
 // METADATA
 export const metadata: Metadata = {
@@ -115,17 +92,18 @@ export const metadata: Metadata = {
 
 // ROOT LAYOUT
 export default function RootLayout({
-  children, modal
-}: {children: React.ReactNode, modal: React.ReactNode}) {
+  children,
+  modal,
+}: {
+  children: React.ReactNode
+  modal: React.ReactNode
+}) {
   return (
     <html lang="uk">
       <body className={geologica.className}>
         {modal}
-        <Navbar />
-        {children}
-        <Footer />
+        <ClientLayout>{children}</ClientLayout>
       </body>
-      
     </html>
   )
 }

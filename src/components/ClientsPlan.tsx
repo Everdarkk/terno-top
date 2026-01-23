@@ -1,5 +1,5 @@
 import styles from "../styles/ClientsPlan.module.css"
-import { overpass } from "@/app/layout"
+import { overpass } from "@/app/fonts"
 import { first, second, third } from "@/lib/data/plan"
 import StepsCard from "./ui/StepsCard"
 import Image from "next/image"

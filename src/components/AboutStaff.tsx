@@ -1,5 +1,5 @@
 import styles from "../styles/AboutStaff.module.css"
-import { overpass } from "@/app/layout"
+import { overpass } from "@/app/fonts"
 
 export default function AboutStaff() {
     return (

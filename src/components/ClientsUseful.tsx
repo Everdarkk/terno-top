@@ -1,6 +1,6 @@
 import styles from "../styles/ClientsUseful.module.css"
 import { adviceList } from "@/lib/data/adviceList"
-import { overpass } from "@/app/layout"
+import { overpass } from "@/app/fonts"
 import BackgroundWrap from "./ui/BackgroundWrap"
 
 

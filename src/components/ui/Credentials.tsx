@@ -1,4 +1,4 @@
-import { overpass } from "@/app/layout"
+import { overpass } from "@/app/fonts"
 import styles from "../../styles/Credentials.module.css"
 import { Credential } from "@/lib/types"
 import Image from "next/image"

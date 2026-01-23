@@ -4,7 +4,7 @@ import { useEffect, useState } from "react"
 import Image from "next/image"
 import Link from "next/link"
 import styles from "../../styles/Navbar.module.css"
-import { geologica, tektur, unbounded } from "@/app/layout"
+import { geologica, tektur, unbounded } from "@/app/fonts"
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false)

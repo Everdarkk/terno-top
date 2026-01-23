@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useRef } from 'react'
 import styles from '../../styles/ProductsCategories.module.css'
-import { overpass } from '@/app/layout'
+import { overpass } from '@/app/fonts'
 import { categories } from '@/lib/data/categories'
 import { Category } from '@/lib/types'
 import Image from 'next/image'

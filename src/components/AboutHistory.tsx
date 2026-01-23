@@ -1,5 +1,5 @@
 import styles from "../styles/AboutHistory.module.css"
-import { overpass } from "@/app/layout"
+import { overpass } from "@/app/fonts"
 import { history } from "@/lib/data/history"
 import BackgroundWrap from "./ui/BackgroundWrap"
 

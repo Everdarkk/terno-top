@@ -1,5 +1,5 @@
 import styles from "../styles/AboutHero.module.css"
-import { overpass } from "@/app/layout"
+import { overpass } from "@/app/fonts"
 import VideoBg from "./ui/VideoBg"
 
 export default function AboutHero() {

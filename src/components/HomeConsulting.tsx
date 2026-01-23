@@ -1,7 +1,7 @@
 import { list, perks } from "@/lib/data/consulting"
 import ConsultCard from "./ui/ConsultCard"
 import styles from "../styles/HomeConsulting.module.css"
-import { overpass, geologica } from "@/app/layout"
+import { overpass, geologica } from "@/app/fonts"
 import Image from "next/image"
 import Link from "next/link"
 

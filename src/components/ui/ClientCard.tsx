@@ -1,6 +1,6 @@
-import Image from "next/image"
+
 import styles from "../../styles/ClientCard.module.css"
-import { overpass } from "@/app/layout"
+import { overpass } from "@/app/fonts"
 import { Review } from "@/lib/types"
 import RatingStars from "./RatingStars"
 import { AvatarPlaceholder } from "./AvatarPlaceholder"

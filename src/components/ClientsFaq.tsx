@@ -3,7 +3,7 @@
 import { useState } from "react"
 import { faq } from "@/lib/data/faq"
 import styles from "../styles/ClientsFaq.module.css"
-import { overpass } from "@/app/layout"
+import { overpass } from "@/app/fonts"
 import FaqAccordeon from "./ui/FaqAccordeon"
 import Link from "next/link"
 

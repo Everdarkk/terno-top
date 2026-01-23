@@ -2,7 +2,7 @@ import styles from "../styles/ClientsVisit.module.css"
 import Image from "next/image"
 import PerkCard from "./ui/PerkCard"
 import { steps } from "@/lib/data/steps"
-import { overpass, geologica } from "@/app/layout"
+import { overpass, geologica } from "@/app/fonts"
 
 export default function ClientsVisit() {
     return (

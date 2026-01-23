@@ -1,7 +1,7 @@
 import styles from '../styles/Footer.module.css'
 import Link from 'next/link'
 import Image from 'next/image'
-import {tektur} from '@/app/layout'
+import {tektur} from '@/app/fonts'
 
 export default function Footer() {
     const navList = [

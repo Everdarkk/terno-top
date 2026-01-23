@@ -1,7 +1,7 @@
 import styles from "../../styles/StepsCard.module.css"
 import { StepCard } from "@/lib/types"
 import Image from "next/image"
-import { overpass } from "@/app/layout"
+import { overpass } from "@/app/fonts"
 
 export default function StepsCard({ id, title, iconUrl, children}: StepCard) {
     return (

@@ -1,6 +1,6 @@
 import styles from '../styles/HomeLocation.module.css'
 import GoogleMap from './ui/GoogleMap'
-import { overpass } from '@/app/layout'
+import { overpass } from '@/app/fonts'
 import Image from 'next/image'
 
 export default function HomeLocation() {

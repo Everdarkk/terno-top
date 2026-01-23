@@ -1,4 +1,4 @@
-import { overpass } from '@/app/layout'
+import { overpass } from '@/app/fonts'
 import styles from '../styles/HomeProducts.module.css'
 import Link from 'next/link'
 import CardSlider from './ui/CardSlider'

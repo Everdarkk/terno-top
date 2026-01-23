@@ -1,10 +1,7 @@
-import { overpass } from '@/app/layout';
-import styles from '../../styles/FaqAccordeon.module.css';
+import { overpass } from '@/app/fonts'
+import styles from '../../styles/FaqAccordeon.module.css'
 
-// Компонент приймає:
-// item - об'єкт з даними {question, answer}
-// isOpen - булеве значення (true/false), чи відкритий він зараз
-// onToggle - функцію, яку треба викликати при кліку
+
 export default function FaqAccordeon({ item, isOpen, onToggle }) {
   return (
     <li

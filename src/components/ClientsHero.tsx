@@ -1,5 +1,5 @@
 import styles from '../styles/ClientsHero.module.css'
-import { overpass, geologica } from '@/app/layout'
+import { overpass, geologica } from '@/app/fonts'
 import VideoBg from './ui/VideoBg'
 
 export default function ClientsHero() {

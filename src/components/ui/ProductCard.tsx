@@ -1,4 +1,4 @@
-import { overpass, geologica } from '@/app/layout'
+import { overpass, geologica } from '@/app/fonts'
 import Image from "next/image"
 import styles from '../../styles/ProductCard.module.css'
 import { Product } from '../../lib/types'

@@ -1,5 +1,5 @@
 import styles from "../styles/HomeSummary.module.css"
-import {geologica, overpass} from "@/app/layout"
+import {geologica, overpass} from "@/app/fonts"
 import PerkCard from "./ui/PerkCard"
 import { perkList } from "@/lib/data/perkList"
 

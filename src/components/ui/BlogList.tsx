@@ -2,7 +2,7 @@ import Image from "next/image"
 import styles from "../../styles/BlogList.module.css"
 import { createClient } from '@/lib/supabase/server'
 import Link from "next/link"
-import { overpass } from "@/app/layout"
+import { overpass } from "@/app/fonts"
 
 export default async function BlogList() {
   const supabase = await createClient()

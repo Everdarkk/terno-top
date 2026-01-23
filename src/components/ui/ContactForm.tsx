@@ -5,7 +5,7 @@ import { useFormStatus } from 'react-dom'
 import { useEffect, useRef } from 'react'
 import { sendContactForm } from '../../actions/form/actions'
 import styles from '../../styles/ContactForm.module.css'
-import { overpass } from '@/app/layout'
+import { overpass } from '@/app/fonts'
 
 const initialState = {
   success: false,
