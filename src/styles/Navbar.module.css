@@ -37,10 +37,17 @@
 
 /* LOGO */
 .logoWrap {
-    display: flex;
-    align-items: center;
-    gap: 0.313rem;
+  display: flex;
+  align-items: center;
+  gap: 0.313rem;
+  
+  transition: transform 0.35s cubic-bezier(.4,0,.2,1);
 }
+.logoWrap:hover {
+  transform: scale(1.02);
+  transition: transform 0.35s cubic-bezier(.4,0,.2,1);
+}
+
 .logoLink {
     text-decoration: none;
 }
