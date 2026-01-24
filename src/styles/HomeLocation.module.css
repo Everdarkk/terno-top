@@ -143,11 +143,49 @@
     gap: 0.3rem;
 }
 
+/* GUIDE WRAP */
+.guideWrap {
+    display: flex;
+    flex-direction: column;
+    gap: var(--text-header);
+    align-items: center;
+}
+
+/* VIDEO WRAP*/
+.videoWrap {
+    width: 100%;
+    justify-content: center;
+    gap: var(--text-header);
+    display: flex;
+
+}
+
+.mainWay, .sideWay {
+    width: clamp(15rem, 30vw, 50rem);
+    height: clamp(8rem, 20vw, 20rem);
+    border-radius: 0.6rem;
+    object-fit: cover;
+}
+
 /* BREAKPOINTS */
 
 @media (max-width: 900px) {
     .infoWrap {
         flex-direction: column;
+    }
+    
+    .guideWrap {
+        justify-content: center;
+        text-align: center;
+    }
+
+    .videoWrap {
+        flex-direction: column;
+        align-items: center;
+    }
+    .mainWay, .sideWay {
+        width: 80%;
+        height: auto;
     }
 }
 

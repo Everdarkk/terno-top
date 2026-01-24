@@ -130,6 +130,36 @@ export default function HomeLocation() {
                     {/* MAP */}
                     <GoogleMap />
                 </div>
+
+                {/* VIDEO GUIDE */}
+                <div className={styles.guideWrap}>
+                    {/* TITLE */}
+                    <h5 className={styles.header}>
+                        Невеликий відео-гід як нас знайти з вулиці Київська
+                    </h5>
+                    <div className={styles.videoWrap}>
+                        <video
+                            autoPlay
+                            muted
+                            loop
+                            playsInline
+                            preload="metadata"
+                            className={styles.mainWay}
+                        >
+                        <source src={'/videos/main-way.mp4'} type="video/mp4" />
+                        </video>
+                        <video
+                            autoPlay
+                            muted
+                            loop
+                            playsInline
+                            preload="metadata"
+                            className={styles.sideWay}
+                        >
+                        <source src={'/videos/side-way.mp4'} type="video/mp4" />
+                        </video>
+                    </div>
+                </div>
             </div>
         </section>
     )
