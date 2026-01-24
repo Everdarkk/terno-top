@@ -35,7 +35,7 @@ export const metadata: Metadata = {
     'протези нижніх та верхніх кінцівок',
   ],
 
-  // Інформація про автора/власника
+  // OWNER SETTINGS
   authors: [{ name: 'ПП Терно-Топ' }],
   creator: 'ПП Терно-Топ',
   publisher: 'ПП Терно-Топ',
@@ -50,7 +50,7 @@ export const metadata: Metadata = {
     type: 'website',
     images: [
       {
-        url: '/opengraph-image.png', // Переконайтеся, що файл є в папці public або app
+        url: '/opengraph-image.png',
         width: 1200,
         height: 630,
         alt: 'Терно-Топ — виробництво протезів та ортопедичного взуття в Тернополі',
@@ -58,15 +58,15 @@ export const metadata: Metadata = {
     ],
   },
 
-  // Налаштування для Twitter/X
+  // X SETTINGS
   twitter: {
     card: 'summary_large_image',
     title: 'Терно-Топ — протезування, ортопедичне взуття, устілки та індивідуальні засоби реабілітації у Тернополі.',
     description: 'Якісні засоби реабілітації та ортопедичне взуття від виробника.',
-    images: ['/opengraph-image.jpg'], // Та ж картинка
+    images: ['/opengraph-image.jpg'],
   },
 
-  // Іконки сайту
+  // SITE ICONS
   icons: {
     icon: '/favicon.ico',
     shortcut: '/favicon-16x16.png',
