@@ -1,4 +1,4 @@
-import { overpass, geologica } from '@/app/fonts'
+import { overpass } from '@/app/fonts'
 import Image from "next/image"
 import styles from '../../styles/ProductCard.module.css'
 import { Product } from '../../lib/types'
@@ -6,6 +6,8 @@ import { Product } from '../../lib/types'
 type Props = {
   product: Product
 }
+
+
 
 export default function ProductCard({ product }: Props) {
   const { title, materials, season, imgSrc } = product

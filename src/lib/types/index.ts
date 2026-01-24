@@ -67,3 +67,11 @@ export type Category = {
   description: string,
   imageUrl: string
 }
+
+export type Staff = {
+  jobTitle: string,
+  surname: string,
+  name: string,
+  secondName: string,
+  imgUrl: string
+}

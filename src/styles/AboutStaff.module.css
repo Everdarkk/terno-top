@@ -37,7 +37,33 @@
     background-color: var(--color-black);
 }
 
+/* CEO PRESENTATION */
+.ceoWrap {
+  display: flex;
+  gap: var(--text-title);
+  align-items: center;
+  justify-content: center;
+}
+
+/* CEO TEXT */
+.ceoText {
+  max-width: 50%;
+  display: flex;
+  flex-direction: column;
+  gap: var(--text-header);
+  font-size: var(--text-p);
+}
+
 /* BREAKPOINTS */
+@media (max-width: 900px) {
+    .ceoWrap {
+        flex-direction: column;
+    }
+    .ceoText {
+        max-width: 100%;
+    }
+}
+
 @media (max-width: 620px) {
     .title {
         flex-direction: column;
